@@ -70,6 +70,7 @@
       background:#F7F2E9;
       -webkit-font-smoothing:antialiased;
       text-rendering:optimizeLegibility;
+      overflow-x:hidden;
     }
     h1,h2,h3,h4,h5 {
       font-family:'Fraunces',Georgia,serif;
@@ -708,7 +709,7 @@
 
 <!-- ======================== FOOTER ======================== -->
 <footer class="relative z-10 mt-10 bg-brand-charcoal text-white/90">
-  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-16 grid grid-cols-12 gap-10">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-16 grid grid-cols-12 gap-6 sm:gap-10">
     <div class="col-span-12 md:col-span-4">
       <div class="flex items-center gap-2.5">
         <span class="w-[44px] h-[44px] rounded-full flex-shrink-0 p-[2px]" style="background:#F0EBE1; box-shadow:0 0 0 1px rgba(255,255,255,0.06), 0 2px 8px rgba(0,0,0,0.25);">
@@ -776,8 +777,16 @@
         io.unobserve(e.target);
       }
     });
-  }, { threshold: 0.25 });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => {
+    // Immediately show elements already in viewport on load
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      el.classList.add('visible');
+    } else {
+      io.observe(el);
+    }
+  });
 
   // Stagger index auto-assign if missing
   document.querySelectorAll('[data-stagger]').forEach(parent => {
