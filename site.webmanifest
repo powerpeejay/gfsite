@@ -1,0 +1,20 @@
+{
+  "name": "Senta Jacob — Glutenfrei leben",
+  "short_name": "Senta Jacob",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#4F8A7A",
+  "background_color": "#F7F2E9",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

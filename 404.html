@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seite nicht gefunden — Senta Jacob</title>
+  <meta name="theme-color" content="#4F8A7A">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              teal: '#4F8A7A',
+              'teal-dark': '#3E6E61',
+              cream: '#F7F2E9',
+              charcoal: '#1C2A25',
+              ink: '#2A3A34',
+              muted: '#6F7A74',
+            }
+          },
+          fontFamily: {
+            display: ['Fraunces', 'Georgia', 'serif'],
+            body: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #F7F2E9;
+      color: #2A3A34;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2 {
+      font-family: 'Fraunces', Georgia, serif;
+      letter-spacing: -0.025em;
+      color: #1C2A25;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center px-6 text-center">
+  <div class="max-w-md">
+    <img src="brand_assets/logobetter.png" alt="Glutenfrei Logo" width="80" height="80" style="object-fit:contain; mix-blend-mode:multiply; margin:0 auto 32px;">
+    <h1 class="font-display text-4xl font-medium mb-4" style="line-height:1.1;">Seite nicht gefunden</h1>
+    <p class="text-brand-muted mb-8" style="line-height:1.7;">Die Seite, die du suchst, existiert nicht mehr oder wurde verschoben. Aber kein Grund zur Sorge — du findest alles Wichtige auf der Startseite.</p>
+    <a href="index.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-full text-white font-medium text-sm" style="background:linear-gradient(135deg,#5A9A89,#4F8A7A); box-shadow:inset 0 1px 0 rgba(255,255,255,0.18), 0 2px 8px rgba(47,84,72,0.22);">
+      Zur Startseite
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</body>
+</html>

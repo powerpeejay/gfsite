@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eBook · Glutenfrei leben mit Zöliakie — Senta Jacob</title>
+  <meta name="description" content="Dein sicherer Einstieg ohne Stress. Das eBook von Senta Jacob für Menschen mit Zöliakie.">
+  <meta name="theme-color" content="#4F8A7A">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:title" content="eBook · Glutenfrei leben mit Zöliakie — Senta Jacob">
+<meta property="og:description" content="Dein sicherer Einstieg ohne Stress. Das eBook von Senta Jacob für Menschen mit Zöliakie.">
+<meta property="og:image" content="og-image.png">
+<script src="https://cdn.tailwindcss.com" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { brand: { teal:'#4F8A7A','teal-dark':'#3E6E61','teal-deep':'#2F5448', mint:'#D8EDE3','mint-soft':'#EDF6F0', cream:'#F7F2E9','cream-dark':'#EEE6D4', charcoal:'#1C2A25', ink:'#2A3A34', muted:'#6F7A74', line:'#E4E8E2' } },
+        fontFamily: { display:['Fraunces','Georgia','serif'], body:['Inter','system-ui','sans-serif'], script:['Caveat','cursive'] },
+      }}
+    }
+  </script>
+  <style>
+    *,*::before,*::after { box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family:'Inter',system-ui,sans-serif; color:#2A3A34; line-height:1.75; background:#F7F2E9; -webkit-font-smoothing:antialiased; }
+    h1,h2,h3,h4 { font-family:'Fraunces',Georgia,serif; font-optical-sizing:auto; letter-spacing:-0.025em; color:#1C2A25; }
+    h1 { font-weight:500; line-height:1.05; }
+    h2 { font-weight:500; line-height:1.1; }
+    h3 { font-weight:500; line-height:1.2; }
+
+    .page-atmos {
+      background:
+        radial-gradient(900px 600px at 85% -10%, rgba(79,138,122,0.10), transparent 60%),
+        radial-gradient(800px 500px at -10% 40%, rgba(216,237,227,0.55), transparent 55%),
+        #F7F2E9;
+    }
+    .grain::before {
+      content:''; position:absolute; inset:0; pointer-events:none; opacity:.035; mix-blend-mode:multiply;
+      background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.8 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    }
+
+    /* Book page */
+    .book-page { position:relative; background:#FFFFFF; border-radius: 2rem; box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset, 0 40px 80px -50px rgba(47,84,72,.3), 0 14px 30px -20px rgba(47,84,72,.2); border: 1px solid rgba(28,42,37,0.05); padding: 3.5rem 3rem 3.5rem; max-width: 780px; margin: 0 auto 2rem; }
+    .book-page .chapter-num { font-family:'Fraunces',serif; font-size:4.5rem; line-height:1; color:#EEE6D4; letter-spacing:-0.05em; font-weight:500; }
+    .book-page .chapter-label { font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; color:#4F8A7A; font-weight:500; }
+    .book-page h2 { font-size: 2.4rem; margin-top: .8rem; max-width: 22ch; }
+    .book-page h3 { font-size: 1.3rem; margin-top: 2.2rem; margin-bottom: .6rem; }
+    .book-page p { margin-bottom: 1rem; max-width: 62ch; color:#3A4540; }
+    .book-page ul { list-style: none; padding: 0; margin: 1rem 0 1.2rem; }
+    .book-page ul li { position: relative; padding-left: 1.4rem; margin-bottom: .55rem; max-width: 62ch; color:#3A4540; }
+    .book-page ul li::before { content:''; position:absolute; left:0; top:.9em; width:.6rem; height:1.5px; background:#4F8A7A; }
+    .book-page .callout { background: #EDF6F0; border-left: 3px solid #4F8A7A; border-radius: 0 1rem 1rem 0; padding: 1.2rem 1.4rem; margin: 1.6rem 0; color:#2F5448; }
+    .book-page .callout strong { color:#1C2A25; }
+    .book-page .warning { background: #FCF3EA; border-left: 3px solid #D4925B; border-radius: 0 1rem 1rem 0; padding: 1.2rem 1.4rem; margin: 1.6rem 0; color:#7A4E22; }
+    .book-page .warning strong { color:#5C3A15; }
+
+    .btn { display:inline-flex; align-items:center; gap:.5rem; padding:.75rem 1.15rem; border-radius:999px; font-weight:500; font-size:.88rem; transition: transform .35s cubic-bezier(0.22,1,0.36,1), box-shadow .35s, background-color .3s; border:1px solid transparent; cursor:pointer; }
+    .btn:active { transform: scale(.97); }
+    .btn-primary { background:#4F8A7A; color:#fff; box-shadow: 0 10px 24px -12px rgba(47,84,72,.55); }
+    .btn-primary:hover { transform: translateY(-2px) scale(1.02); background:#3E6E61; }
+    .btn-ghost { background:#fff; color:#1C2A25; border-color:#E4E8E2; }
+    .btn-ghost:hover { transform: translateY(-2px) scale(1.02); border-color:#CFDAD2; }
+
+    /* TOC sidebar */
+    .toc-link { display:flex; align-items:baseline; gap:.55rem; padding:.45rem .6rem; border-radius:.6rem; font-size:.85rem; color:#52605A; transition: background-color .2s, color .2s; }
+    .toc-link:hover { background:#EDF6F0; color:#1C2A25; }
+    .toc-link .num { font-family:'Fraunces',serif; color:#4F8A7A; font-size:.8rem; width:1.6rem; flex-shrink:0; }
+
+    /* Print */
+    @media print {
+      body { background:#fff; }
+      .no-print { display:none !important; }
+      .book-page { box-shadow:none; border:none; margin:0 auto; padding: 2.5cm 2cm; page-break-after: always; border-radius:0; }
+      .page-atmos { background:#fff; }
+    }
+
+    .leaf-mark { width:34px; height:1.5px; background:#4F8A7A; display:inline-block; vertical-align:middle; margin-right:.7rem; border-radius:2px; }
+
+    /* Reveal animation */
+    .reveal { opacity:0; transform:translateY(30px); transition: opacity .9s cubic-bezier(0.22,1,0.36,1), transform .9s cubic-bezier(0.22,1,0.36,1); }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity:1; transform:none; transition:none; } }
+  
+/* Focus-visible for all interactive elements */
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #4F8A7A;outline-offset:3px}
+/* Skip-to-content */
+.skip-link{position:absolute;top:-100%;left:16px;z-index:9999;background:#4F8A7A;color:white;padding:12px 24px;border-radius:0 0 8px 8px;font-size:.85rem;font-weight:500;text-decoration:none;transition:top .2s ease}
+.skip-link:focus{top:0;outline:2px solid #2F5448;outline-offset:2px}
+/* Print */
+@media print{.grain,header,#mobileMenu,.btn,.btn-primary,.btn-ghost,footer nav{display:none !important}body{background:white !important;color:black !important;font-size:12pt}a[href]::after{content:" (" attr(href) ")";font-size:.8em;color:#666}img{max-width:100% !important}h1,h2,h3{color:black !important;page-break-after:avoid}section{page-break-inside:avoid}}
+</style>
+</head>
+<body class="page-atmos">
+<a href="#main-content" class="skip-link">Zum Inhalt springen</a>
+<div class="grain fixed inset-0 -z-0"></div>
+
+<!-- ========== TOP BAR ========== -->
+<header class="no-print relative z-40">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 pt-6">
+    <div class="flex items-center justify-between bg-white/75 backdrop-blur-md rounded-full px-5 py-2.5 border border-black/5" style="box-shadow: 0 14px 40px -24px rgba(47,84,72,.25);">
+      <a href="index.html" class="flex items-center gap-2.5">
+        <img src="brand_assets/logobetter.png" alt="Glutenfrei Logo" width="42" height="42" style="object-fit:contain; flex-shrink:0; mix-blend-mode:multiply;">
+        <span class="flex flex-col gap-[2px] leading-none">
+          <span class="font-display text-[1.05rem] leading-none tracking-tight text-brand-charcoal">senta<span class="text-brand-teal">.</span>jacob</span>
+          <span class="font-body text-[0.58rem] tracking-[0.14em] uppercase text-brand-muted">glutenfrei leben</span>
+        </span>
+      </a>
+      <div class="text-xs text-brand-muted hidden sm:block">eBook · Ausgabe 2026</div>
+      <div class="flex items-center gap-2">
+        <button onclick="window.print()" class="btn btn-ghost hidden sm:inline-flex">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2M6 14h12v8H6z"/></svg>
+          Als PDF drucken
+        </button>
+        <a href="index.html" class="btn btn-primary">Zurück zur Seite</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ========== COVER ========== -->
+<section class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 pt-10 pb-6">
+  <div class="book-page overflow-hidden reveal" style="padding: 0; max-width: 900px;">
+    <div class="grid grid-cols-12">
+      <div class="col-span-12 lg:col-span-7 p-10 lg:p-16">
+        <div class="flex items-center gap-2 text-[0.72rem] uppercase tracking-[0.2em] text-brand-teal">
+          <span class="leaf-mark"></span> eBook · 2026
+        </div>
+        <h1 class="mt-6 text-[2.4rem] sm:text-[3rem] lg:text-[3.4rem]" style="max-width:14ch;">
+          Glutenfrei leben mit <span class="italic">Zöliakie</span>
+        </h1>
+        <p class="mt-4 font-display text-[1.4rem] text-brand-muted italic" style="max-width:22ch;">Dein sicherer Einstieg — ohne Stress.</p>
+        <p class="mt-8 text-brand-muted max-w-[52ch]">
+          Ein Begleiter für die ersten Wochen nach der Diagnose. Für alle, die gerade erfahren haben: „Du hast Zöliakie.“ Und nicht wissen, wo sie anfangen sollen.
+        </p>
+        <div class="mt-12 flex items-center gap-3">
+          <div class="w-14 h-14 rounded-full overflow-hidden border border-brand-line">
+            <img src="brand_assets/Senta.JPG" alt="Senta Jacob" class="w-full h-full object-cover" width="800" height="600">
+          </div>
+          <div>
+            <div class="font-display text-[1.05rem] text-brand-charcoal leading-tight">Senta Jacob</div>
+            <div class="text-xs text-brand-muted">Glutenfrei-Begleiterin · seit 2011</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-span-12 lg:col-span-5 relative min-h-[320px] lg:min-h-[540px]" style="background: linear-gradient(155deg, #4F8A7A 0%, #2F5448 100%);">
+        <svg class="absolute inset-0 w-full h-full" viewBox="0 0 300 540" preserveAspectRatio="xMidYMid slice" fill="none">
+          <g stroke="white" stroke-opacity="0.18" stroke-width="1" fill="none">
+            <path d="M150 60 C 200 140, 200 260, 150 340 C 100 260, 100 140, 150 60 Z"/>
+            <line x1="150" y1="60" x2="150" y2="340"/>
+            <path d="M150 100 Q 175 120, 175 150"/><path d="M150 140 Q 180 160, 180 190"/>
+            <path d="M150 180 Q 175 200, 175 230"/><path d="M150 220 Q 170 240, 170 270"/>
+            <path d="M150 100 Q 125 120, 125 150"/><path d="M150 140 Q 120 160, 120 190"/>
+            <path d="M150 180 Q 125 200, 125 230"/><path d="M150 220 Q 130 240, 130 270"/>
+          </g>
+          <g stroke="white" stroke-opacity="0.1" fill="none">
+            <circle cx="60" cy="440" r="40"/><circle cx="60" cy="440" r="26"/>
+            <circle cx="240" cy="100" r="28"/><circle cx="240" cy="100" r="16"/>
+          </g>
+        </svg>
+        <div class="absolute left-6 bottom-6 right-6 rounded-2xl p-4" style="background:rgba(255,255,255,0.12); backdrop-filter: blur(14px); border:1px solid rgba(255,255,255,0.18);">
+          <div class="font-script text-2xl text-white">Du bist nicht allein.</div>
+          <div class="text-xs text-white/70 mt-1">10 Kapitel · 1 Notfallplan · 4 Checklisten</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TOC ========== -->
+<section class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 py-6">
+  <div class="book-page reveal">
+    <div class="chapter-label">Inhalt</div>
+    <h2 class="mt-1">Was dich erwartet.</h2>
+    <p class="mt-4 text-brand-muted">Lies die Kapitel der Reihe nach oder spring zu dem, was gerade brennt. Am Ende findest du vier Checklisten zum Ausdrucken — für Küche, Restaurant, Reise und den Notfall.</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-8">
+      <a href="#k1" class="toc-link"><span class="num">01</span> Willkommen & deine neue Realität</a>
+      <a href="#k2" class="toc-link"><span class="num">02</span> Grundlagen: Was du wirklich wissen musst</a>
+      <a href="#k3" class="toc-link"><span class="num">03</span> Die größten Fehler am Anfang</a>
+      <a href="#k4" class="toc-link"><span class="num">04</span> Deine sichere glutenfreie Küche</a>
+      <a href="#k5" class="toc-link"><span class="num">05</span> Einkaufen ohne Stress</a>
+      <a href="#k6" class="toc-link"><span class="num">06</span> Essen gehen ohne Angst</a>
+      <a href="#k7" class="toc-link"><span class="num">07</span> Reisen & unterwegs</a>
+      <a href="#k8" class="toc-link"><span class="num">08</span> Kinder & Zöliakie</a>
+      <a href="#k9" class="toc-link"><span class="num">09</span> Mindset: Dein Leben bleibt gut</a>
+      <a href="#k10" class="toc-link"><span class="num">10</span> Bonus: Checklisten & Notfallkarte</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CHAPTER 1 ========== -->
+<section class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8" id="k1">
+  <div class="book-page reveal">
+    <div class="chapter-num">01</div>
+    <div class="chapter-label">Kapitel Eins</div>
+    <h2>Willkommen — und deine neue Realität.</h2>
+    <p class="mt-6">Vielleicht hast du die Diagnose vor drei Tagen bekommen. Vielleicht vor drei Monaten. Vielleicht schläfst du gerade schlecht, weil der Kopf nicht mehr abschaltet: „Darf ich das essen? Und das? Was, wenn ich mich mit meinen Freunden treffe? Was, wenn ich zur Hochzeit meiner Cousine eingeladen bin?“</p>
+    <p>Ich war an genau diesem Punkt. Und ich sage dir hier, direkt am Anfang, das Wichtigste: Es wird leichter. Deutlich leichter, als es sich gerade anfühlt. Aber es wird nicht dadurch leichter, dass du alles gleichzeitig regelst. Es wird leichter, weil du Schritt für Schritt Routinen baust, die dich tragen.</p>
+
+    <h3>Was sich jetzt ändert</h3>
+    <p>Ehrlich gesagt: eine ganze Menge. Deine Küche wird anders funktionieren. Dein Einkauf wird am Anfang länger dauern. Du wirst in Restaurants mehr fragen als früher. Du wirst Zutatenlisten lesen, wo du früher einfach gegriffen hast. Und du wirst — und das ist der unangenehme Teil — lernen, „nein, das passt für mich leider nicht“ zu sagen, auch wenn jemand dir gerade liebevoll etwas hinstellt.</p>
+
+    <h3>Was sich nicht ändert</h3>
+    <p>Du isst weiterhin Essen, das schmeckt. Du gehst weiterhin mit Freunden aus. Du reist. Du backst. Du feierst Geburtstage. Du bist keine kranke Person, die auf Diät sitzt — du bist ein Mensch mit einer klaren medizinischen Regel, die du befolgst, weil dein Körper es braucht. Das ist ein Unterschied, den das Umfeld oft nicht macht, den du aber für dich selbst machen darfst.</p>
+
+    <div class="callout">
+      <strong>Die erste Woche nach der Diagnose</strong><br>
+      Wirf nicht sofort alles aus der Küche. Atme. Lies dieses eBook. Und fang bei deinem Toaster an — der ist der häufigste unsichtbare Schuldige. Mehr zur sicheren Küche in Kapitel 4.
+    </div>
+
+    <h3>Emotionen: was gerade normal ist</h3>
+    <p>Nach der Diagnose kommen oft Erleichterung und Trauer gleichzeitig. Erleichterung, endlich einen Namen für die Beschwerden zu haben. Trauer um das, was „einfach so“ nicht mehr geht: das warme Croissant am Wochenende, die Pizza auf die Schnelle, der geteilte Nudelsalat vom Grill. Beides darf da sein. Beides gehört dazu. Und beides geht vorbei, wenn du anfängst, dir neue Lieblingsmomente zu bauen.</p>
+  </div>
+</section>
+
+<!-- ========== CHAPTER 2 ========== -->
+<section class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8" id="k2">
+  <div class="book-page reveal">
+    <div class="chapter-num">02</div>
+    <div class="chapter-label">Kapitel Zwei</div>
+    <h2>Grundlagen: was du wirklich wissen musst.</h2>
+    <p class="mt-6">Du musst nicht Ernährungswissenschaftlerin werden. Aber ein paar Dinge musst du verstanden haben — weil sie den Unterschied machen zwischen „ich bin sicher“ und „ich reagiere seit drei Wochen und weiß nicht, warum“.</p>
+
+    <h3>Was ist Gluten eigentlich?</h3>
+    <p>Gluten ist ein Klebereiweiß, das in Weizen, Dinkel, Roggen, Gerste und — Achtung — vielen Hafersorten vorkommt. Es macht Brotteig elastisch und Pizza knusprig. Für Menschen mit Zöliakie löst es eine Immunreaktion aus, die die Darmschleimhaut schädigt. Das passiert auch dann, wenn du nichts davon merkst.</p>
+
+    <h3>Wo versteckt es sich?</h3>
+    <ul>
+      <li>Sojasauce (enthält fast immer Weizen)</li>
+      <li>Bouillon, Brühwürfel, Suppengewürze</li>
+      <li>Wurst, Paté, Fleischkäse — oft als Bindemittel</li>
+      <li>Malz, Malzextrakt, Malzaroma</li>
+      <li>Bier (auch weizenfreies ist meist gerstebasiert)</li>
+      <li>Einige Gewürzmischungen und Instantsuppen</li>
+      <li>Oblaten unter Kuchen, Paniermehl, Semmelbrösel</li>
+      <li>Medikamente, die Weizenstärke als Träger nutzen</li>
+    </ul>
+
+    <h3>Warum schon Spuren gefährlich sind</h3>
+    <p>Der Grenzwert für die Kennzeichnung „glutenfrei“ liegt bei 20 Milligramm Gluten pro Kilogramm Lebensmittel. Das ist winzig — etwa ein Brotkrümel, über ein Kilo verteilt. Aber für manche Menschen mit Zöliakie reicht bereits weniger, um eine Reaktion auszulösen. Das ist der Grund, warum „einmal die Woche ein bisschen“ keine Option ist. Dein Immunsystem bucht jeden Kontakt.</p>
+
+    <div class="warning">
+      <strong>Wichtig — und wird oft vergessen:</strong> Wenn du noch nicht diagnostiziert bist und ein Arzt Zöliakie vermutet, iss weiter Gluten, bis die Untersuchungen abgeschlossen sind. Sonst werden die Antikörpertests falsch negativ und du landest in einer zweiten, unnötigen Untersuchungsrunde.
+    </div>
+
+    <h3>Die wichtigsten Regeln — einfach gesagt</h3>
+    <ul>
+      <li><strong>Kein „ein bisschen“.</strong> Dein Körper kennt keine Gnadengrenze.</li>
+      <li><strong>Lies, bevor du kaufst.</strong> Rezepturen ändern sich ständig.</li>
+      <li><strong>Frage nach, bevor du isst.</strong> Peinlich ist es für einen Moment — krank zu werden ist es für Tage.</li>
+      <li><strong>Kreuzkontamination ist echt.</strong> Der gleiche Toaster, der gleiche Kochlöffel, das gleiche Öl in der Fritteuse reicht.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ========== CHAPTER 3 ========== -->
+<section class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8" id="k3">
+  <div class="book-page reveal">
+    <div class="chapter-num">03</div>
+    <div class="chapter-label">Kapitel Drei</div>
+    <h2>Die größten Fehler am Anfang.</h2>
+    <p class="mt-6">Diese Fehler machen fast alle — ich auch. Sie sind nicht schlimm, solange du sie kennst und korrigierst. Schlimm werden sie nur, wenn sie wochen- oder monatelang unbemerkt laufen.</p>
+
+    <h3>Fehler 1: „Ein bisschen geht schon“</h3>
+    <p>Der Klassiker. Du bist gut drauf, dein Darm fühlt sich ruhig an, der Freund bietet dir sein Brötchen an — „nur eine Ecke“. Das Problem: Deine Darmschleimhaut heilt langsam, und jeder einzelne Gluten-Kontakt wirft sie wieder zurück. Du merkst es vielleicht nicht sofort. Aber du spürst es Wochen später, wenn du dich fragst, warum du wieder so müde bist.</p>
+
+    <h3>Fehler 2: Kreuzkontamination unterschätzen</h3>
+    <p>Das ist der heimtückische Fehler. Du kochst glutenfrei — aber schneidest das Gemüse auf dem Brett, auf dem vorhin das normale Brot lag. Du streichst Butter aus dem Topf, in dem Krümel schwimmen. Du benutzt den alten Toaster „nur kurz“. Das reicht. Wir gehen in Kapitel 4 genau durch, wie du deine Küche dicht bekommst.</p>
+
+    <h3>Fehler 3: Zutatenlisten nur überfliegen</h3>
+    <p>„Das sah sicher aus.“ Diesen Satz wirst du lernen, nicht mehr zu benutzen. Lies die Liste komplett, auch bei Produkten, die du schon dreimal gekauft hast — Hersteller ändern Rezepturen ohne Ankündigung. Achte besonders auf das Kleingedruckte unter der Zutatenliste: „Kann Spuren von … enthalten.“</p>
+
+    <h3>Fehler 4: Zu viel Verzicht, zu wenig Ersatz</h3>
+    <p>Viele stürzen sich in die „darf ich nicht“-Liste und vergessen die „kann ich entdecken“-Liste. Reis, Mais, Hirse, Buchweizen, Quinoa, Amarant, Teff, Maniok, Kichererbsenmehl, Mandelmehl — das ist eine riesige Welt, und sie schmeckt. Wer nur verzichtet, wird bitter. Wer ersetzt, baut sich ein neues Lieblings-Repertoire.</p>
+
+    <div class="callout">
+      <strong>Mein persönlicher Test:</strong> Wenn ich mit jemandem arbeite, frage ich nach einer Woche nicht „Was darfst du jetzt nicht mehr?“ — ich frage „Was hast du diese Woche Neues entdeckt?“. Der Unterschied in der Antwort sagt mir alles.
+    </div>
+  </div>
+</section>
+
+<!-- ========== CHAPTER 4 ========== -->
+<section class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8" id="k4">
+  <div class="book-page reveal">
+    <div class="chapter-num">04</div>
+    <div class="chapter-label">Kapitel Vier</div>
+    <h2>Deine sichere glutenfreie Küche.</h2>
+    <p class="mt-6">Die Küche ist dein Heimspiel. Hier kannst du zu 100 % kontrollieren, was passiert. Und genau deshalb lohnt es sich, hier einmal gründlich zu arbeiten — danach hast du einen Ort, an dem du nicht mehr nachdenken musst.</p>
+
+    <h3>Schritt 1 — Inventur statt Kahlschlag</h3>
+    <p>Wirf nicht sofort alles weg. Sortiere. Glutenhaltige Lebensmittel dürfen im Mischhaushalt bleiben — aber sie bekommen einen eigenen Platz: eigenes Fach, eigene Ablage, eigene Seite im Regal. Du brauchst optische Grenzen, nicht emotionale.</p>
+
+    <h3>Schritt 2 — Neu anschaffen</h3>
+    <ul>
+      <li>Ein zweiter Toaster (oder Toasterbeutel) — <em>nicht verhandelbar</em></li>
+      <li>Eigene Holzbretter (Holz nimmt Gluten auf, Plastik lässt sich abwaschen)</li>
+      <li>Eigene Kochlöffel aus Holz oder Silikon</li>
+      <li>Ein eigenes Sieb — Nudelwasser-Reste sind unsichtbar, aber da</li>
+      <li>Eine eigene Butterdose und ein eigenes Marmeladenglas (keine Doppelgänger-Messer)</li>
+      <li>Farbige Markierung: Grün für sicher, das reicht</li>
+    </ul>
+
+    <h3>Schritt 3 — Kreuzkontamination im Mischhaushalt</h3>
+    <p>Die Regel lautet: Glutenfrei wird zuerst zubereitet. Dann die normalen Sachen. Nicht umgekehrt. Oberflächen zwischendurch mit einem sauberen, feuchten Lappen abwischen (nicht mit dem, der gerade Mehlstaub aufgenommen hat). Und: Mehlstaub ist real. Wer daneben Weißmehl verarbeitet, kontaminiert einen halben Quadratmeter.</p>
+
+    <h3>Schritt 4 — Vorrat, der trägt</h3>
+    <ul>
+      <li>Reis (weiß, braun, Basmati, Risotto)</li>
+      <li>Maismehl, Polenta</li>
+      <li>Buchweizen, Hirse, Quinoa</li>
+      <li>Glutenfreie Nudeln (Mais-, Reis- oder Linsenbasis)</li>
+      <li>Glutenfreie Haferflocken (zertifiziert, nicht „normaler“ Hafer)</li>
+      <li>Flohsamenschalen — dein Backhelfer Nummer 1</li>
+      <li>Ein gutes glutenfreies Mehl-Mix (im Zweifel: Schär, Bauckhof, Mionetto)</li>
+      <li>Tamari (glutenfreie Sojasauce) statt Sojasauce</li>
+    </ul>
+
+    <div class="callout">
+      <strong>Backtipp:</strong> Glutenfreie Teige brauchen ein Ei mehr und etwas Flohsamenschalen (1 EL auf 250 g Mehl), sonst krümeln sie. Das ist der Unterschied zwischen „geht so“ und „schmeckt wie früher“.
+    </div>
+  </div>
+</section>
+
+<!-- ========== CHAPTER 5 ========== -->
+<section class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8" id="k5">
+  <div class="book-page reveal">
+    <div class="chapter-num">05</div>
+    <div class="chapter-label">Kapitel Fünf</div>
+    <h2>Einkaufen — ohne zweistündige Regalstudien.</h2>
+    <p class="mt-6">Der erste Einkauf nach der Diagnose dauert zwei Stunden und man geht frustriert raus. Der zwanzigste dauert genauso lange wie früher. Dazwischen liegen ein paar Routinen, die ich dir hier zeige.</p>
+
+    <h3>Die drei sicheren Zonen im Supermarkt</h3>
+    <ul>
+      <li><strong>Obst- und Gemüseabteilung:</strong> 100 % sicher. Greif zu.</li>
+      <li><strong>Metzgerei/Kühltheke, unverarbeitet:</strong> Frisches Fleisch, Fisch, Eier, Naturjoghurt. Sicher.</li>
+      <li><strong>Der Glutenfrei-Bereich:</strong> meist ein eigenes Regal, oft mit dem durchgestrichenen Ähren-Symbol.</li>
+    </ul>
+
+    <h3>Das Ähren-Symbol</h3>
+    <p>Die durchgestrichene Ähre ist das offizielle Siegel der europäischen Zöliakie-Gesellschaften. Produkte mit diesem Symbol sind auditiert und halten den 20-mg-Grenzwert ein. Wenn du unsicher bist: Dieses Symbol ist deine sicherste Wahl.</p>
+
+    <h3>Zutatenlisten lesen — der 10-Sekunden-Check</h3>
+    <p>Schau auf drei Dinge, in dieser Reihenfolge:</p>
+    <ul>
+      <li><strong>Fettgedruckte Allergene.</strong> EU-Vorschrift: Weizen, Gerste, Roggen, Hafer, Dinkel, Kamut müssen hervorgehoben sein.</li>
+      <li><strong>Die „Malz-Falle“.</strong> Gerstenmalz, Malzaroma, Malzextrakt — alles Gluten.</li>
+      <li><strong>Der Kleingedruckte Warnhinweis.</strong> „Kann Spuren von Gluten enthalten“ heißt: nicht sicher für Zöliakie.</li>
+    </ul>
+
+    <h3>Glutenfallen, die fast alle übersehen</h3>
+    <ul>
+      <li>Normaler Hafer — außer, er ist zertifiziert glutenfrei</li>
+      <li>Linsen (können mit Weizen auf dem Feld oder in der Mühle kontaminiert sein — achte auf „glutenfrei“ auf der Packung)</li>
+      <li>Seitan — das <em>ist</em> Gluten</li>
+      <li>Couscous — ist Weizen</li>
+      <li>Bulgur, Grünkern, Dinkel (ja, auch Dinkel) — alles Gluten</li>
+    </ul>
+
+    <div class="callout">
+      <strong>App-Tipp:</strong> Die offizielle DZG-App (Deutsche Zöliakie-Gesellschaft) ist ihr Geld wert. Sie listet geprüfte Produkte und wird regelmäßig aktualisiert. Generische Barcode-Scanner-Apps sind <em>nicht</em> verlässlich, weil Rezepturen sich ändern.
+    </div>
+  </div>
+</section>
+
+<!-- ========== CHAPTER 6 ========== -->
+<section class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8" id="k6">
+  <div class="book-page reveal">
+    <div class="chapter-num">06</div>
+    <div class="chapter-label">Kapitel Sechs</div>
+    <h2>Essen gehen — ohne Angst.</h2>
+    <p class="mt-6">Restaurantbesuche waren für mich am Anfang der schwierigste Teil. Nicht, weil das Essen schlecht gewesen wäre — sondern weil ich mich unsicher gefühlt habe, wie ich mit der Küche spreche, ohne als „die Komplizierte“ durchzugehen. Das legt sich. Hier sind die Werkzeuge, die ich dafür benutze.</p>
+
+    <h3>Vorbereitung ist die halbe Miete</h3>
+    <ul>
+      <li><strong>Speisekarte vorher online prüfen.</strong> 80 % der Infos bekommst du, ohne anzurufen.</li>
+      <li><strong>Vorab anrufen.</strong> Am besten nachmittags zwischen 14:30 und 17:00 — da ist die Küche ruhiger. Frag direkt nach dem Koch oder der Köchin.</li>
+      <li><strong>Apps.</strong> TripAdvisor hat einen „glutenfrei“-Filter, der oft hilft. Die DZG-App listet zertifizierte Restaurants.</li>
+    </ul>
+
+    <h3>Fertige Sätze — die du auswendig lernen darfst</h3>
+    <div class="callout">
+      <strong>Beim Reservieren:</strong> „Ich habe Zöliakie — das ist eine Autoimmunerkrankung, bei der ich absolut kein Gluten vertrage, auch keine Spuren. Wäre es möglich, dass die Küche etwas für mich vorbereitet?“
+    </div>
+    <div class="callout">
+      <strong>Wenn das Personal unsicher ist:</strong> „Kein Problem, ich kann gerne mit dem Koch oder der Köchin kurz sprechen. Es geht mir nur um Kreuzkontamination.“
+    </div>
+    <div class="callout">
+      <strong>Wenn dir gesagt wird „ein bisschen Mehl in der Sauce ist drin“:</strong> „Danke für die Ehrlichkeit. Für mich geht das leider nicht — kann ich stattdessen [Alternative] bekommen?“
+    </div>
+
+    <h3>Sichere vs. riskante Gerichte</h3>
+    <ul>
+      <li><strong>Eher sicher:</strong> Kurzgebratenes ohne Panade, gegrillter Fisch mit Gemüse, Risotto (ohne Bouillon mit Gluten), Salat mit Olivenöl-Zitrone-Dressing (fertige Dressings oft heikel)</li>
+      <li><strong>Riskant:</strong> Buffet jeder Art, Fritteuse (gemeinsam mit Panaden genutzt), Bratensoßen, Nudelgerichte in Restaurants ohne gf-Nudeln, asiatische Küche ohne explizit glutenfreie Sojasauce</li>
+    </ul>
+
+    <h3>Der Notfallplan, wenn es schiefgeht</h3>
+    <p>Es wird vorkommen. Nicht oft, aber es wird vorkommen, dass du später merkst: da war Gluten drin. Panik hilft nicht. Was hilft: Trinken, ausruhen, dem Körper Zeit geben. Die Symptome klingen in der Regel innerhalb von zwei bis vier Tagen wieder ab. Nimm es nicht als Rückschritt, sondern als Info — und überlege in Ruhe, was du beim nächsten Mal anders machst. Kein Drama, keine Schuld.</p>
+  </div>
+</section>
+
+<!-- ========== CHAPTER 7 ========== -->
+<section class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8" id="k7">
+  <div class="book-page reveal">
+    <div class="chapter-num">07</div>
+    <div class="chapter-label">Kapitel Sieben</div>
+    <h2>Reisen & unterwegs.</h2>
+    <p class="mt-6">Die gute Nachricht vorweg: Reisen mit Zöliakie geht. Überall. Die etwas schlechtere: Es braucht mehr Planung als früher — besonders in den ersten paar Reisen, bis du dein eigenes System hast. Danach läuft es.</p>
+
+    <h3>Vor der Reise</h3>
+    <ul>
+      <li><strong>Unterkunft mit Küche priorisieren.</strong> Ferienwohnung, Apartment, Agriturismo. Eine eigene Küche entspannt alles.</li>
+      <li><strong>Restaurants vorab recherchieren.</strong> „gluten-free“ + Stadtname auf Google Maps gibt dir meistens 5–10 Adressen.</li>
+      <li><strong>Übersetzungskarten einpacken.</strong> In der Landessprache. Die DZG hat welche; es gibt auch Celiac Travel Cards online.</li>
+    </ul>
+
+    <h3>Snacks, die immer mitfahren</h3>
+    <ul>
+      <li>Reiswaffeln oder Maiswaffeln</li>
+      <li>Nüsse und getrocknete Früchte</li>
+      <li>Glutenfreie Müsliriegel (zertifiziert)</li>
+      <li>Eine Packung glutenfreie Kekse für den „Ich-hab-jetzt-Hunger“-Moment</li>
+      <li>Instant-Haferbrei (zertifiziert gf) für das Frühstück in Hotels, in denen du unsicher bist</li>
+    </ul>
+
+    <h3>Länder — was ich gelernt habe</h3>
+    <p><strong>Italien</strong> ist unerwartet einfach. Zöliakie ist dort gut bekannt, viele Restaurants haben eine separate glutenfreie Karte oder Pasta. <strong>Spanien</strong> wird besser, ist aber regional unterschiedlich. <strong>Frankreich</strong> hat eine starke Brot-Tradition und ist schwieriger — frag immer explizit nach. <strong>USA</strong> hat fast überall gf-Optionen, aber Kreuzkontamination ist eine Lotterie. <strong>Asien</strong> (Japan, Thailand): Sojasauce ist überall, auch wo du sie nicht vermutest. Extra Vorsicht.</p>
+
+    <div class="warning">
+      <strong>Länderunterschiede bei der Kennzeichnung:</strong> Die EU-Regel mit den fett gedruckten Allergenen gilt nicht überall. In einigen Ländern musst du aktiv nachfragen, statt dich auf die Verpackung zu verlassen.
+    </div>
+  </div>
+</section>
+
+<!-- ========== CHAPTER 8 ========== -->
+<section class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8" id="k8">
+  <div class="book-page reveal">
+    <div class="chapter-num">08</div>
+    <div class="chapter-label">Kapitel Acht</div>
+    <h2>Kinder & Zöliakie.</h2>
+    <p class="mt-6">Wenn dein Kind die Diagnose bekommen hat, ist der erste Impuls fast immer Angst: Wird mein Kind ausgegrenzt? Kann es „normal“ Kind sein? Die ehrliche Antwort: Ja. Aber es braucht ein paar Bausteine, die du aktiv setzen musst — weil das Umfeld sie nicht automatisch mitbringt.</p>
+
+    <h3>Die ersten Gespräche mit deinem Kind</h3>
+    <p>Kinder verstehen mehr, als wir denken — wenn wir es ihnen ruhig erklären. Benutze Bilder statt Warnungen: „In deinem Bauch gibt es ganz kleine Fasern, die Gluten nicht mögen. Wenn du Gluten isst, werden sie traurig und dein Bauch tut weh. Wenn du anderes Essen isst, sind sie fröhlich und dein Bauch ist stark.“ Das funktioniert ab etwa drei Jahren.</p>
+
+    <h3>Kita und Schule</h3>
+    <ul>
+      <li><strong>Ein einseitiges Info-Blatt</strong> für die Einrichtung — mit Name, Diagnose, Grundregel (kein Gluten, keine Spuren), und 3 konkreten Punkten zur Umsetzung.</li>
+      <li><strong>Ein persönliches Gespräch</strong> mit der Leitung und dem direkten Team, nicht nur ein Zettel.</li>
+      <li><strong>Eine Ersatz-Essensbox</strong> im Kühlschrank der Einrichtung für Feste, Geburtstage, Überraschungen.</li>
+      <li><strong>Ein klares Signal an dein Kind:</strong> „Wenn du unsicher bist, isst du es nicht. Das ist dann richtig, nicht peinlich.“</li>
+    </ul>
+
+    <h3>Knete, Fingerfarbe, Basteln</h3>
+    <p>Das wird fast nirgendwo erwähnt, ist aber ein echter Punkt: Handelsübliche Knete enthält oft Weizen. Kinder, die daran riechen oder die Hand danach in den Mund nehmen, können reagieren. Es gibt glutenfreie Knete — oder du machst sie selbst aus Reismehl und Salz.</p>
+
+    <h3>Kindergeburtstage — nicht ausgeschlossen, sondern vorbereitet</h3>
+    <p>Biete der einladenden Familie an, dass dein Kind einen eigenen Kuchen oder Muffin mitbringt. Die meisten Eltern sind dankbar — sie wollen dich nicht enttäuschen, aber sie wissen nicht, wie sie sicher backen sollen. Dein Kind hat seinen eigenen Kuchen, niemand fühlt sich schlecht, alle feiern.</p>
+
+    <div class="callout">
+      <strong>Entwicklung und Wachstum:</strong> Bei Kindern ist eine strikte glutenfreie Ernährung doppelt wichtig — die Darmschleimhaut heilt schneller als bei Erwachsenen, aber Wachstumsphasen brauchen eine intakte Nährstoffaufnahme. Ein ärztliches Verlaufsmonitoring in den ersten zwei Jahren ist Standard.
+    </div>
+  </div>
+</section>
+
+<!-- ========== CHAPTER 9 ========== -->
+<section class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8" id="k9">
+  <div class="book-page reveal">
+    <div class="chapter-num">09</div>
+    <div class="chapter-label">Kapitel Neun</div>
+    <h2>Mindset — dein Leben bleibt gut.</h2>
+    <p class="mt-6">Die praktischen Kapitel lösen 80 % der Fragen. Die letzten 20 % sind Kopfsache. Und die sind genauso wichtig, weil sie entscheiden, ob du die nächsten Jahre erschöpft mit der Diagnose kämpfst — oder ob du irgendwann merkst, dass sie ein Teil deines Alltags geworden ist, der nicht mehr ständig im Mittelpunkt steht.</p>
+
+    <h3>Akzeptanz — aber richtig verstanden</h3>
+    <p>Akzeptanz bedeutet nicht, dass du alles toll finden musst. Sie bedeutet: Du hörst auf, gegen etwas zu kämpfen, das sich nicht wegkämpfen lässt. Du darfst die Diagnose beschissen finden und trotzdem dein Leben lieben. Beides passt zusammen.</p>
+
+    <h3>Kontrolle ohne Angst</h3>
+    <p>Am Anfang fühlt sich die Kontrolle wie ein Käfig an: alles prüfen, alles nachfragen, nichts zufällig. Das ist okay — es ist der Modus, in dem dein System lernt. Nach ein paar Monaten wird aus „ich muss alles prüfen“ ein „ich weiß schon, was ich prüfen muss“. Die Kontrolle verschwindet nicht, aber sie wird leise. Sie läuft im Hintergrund, wie ein gutes Betriebssystem.</p>
+
+    <h3>Routinen, die dich tragen</h3>
+    <ul>
+      <li><strong>Drei feste Lieblingsgerichte</strong> aus deiner Küche, die du blind kannst. Dein Sicherheitsnetz für schlechte Tage.</li>
+      <li><strong>Zwei feste Lieblingsrestaurants</strong>, die wissen, dass du Zöliakie hast. Du musst nicht jedes Mal den neuen Ort testen.</li>
+      <li><strong>Ein fester Einkaufs-Tag</strong>, an dem du deine Basics auffüllst, damit du nicht hungrig und spontan entscheidest.</li>
+      <li><strong>Ein Menschen-Netz</strong> — eine Person im Freundeskreis, die es wirklich verstanden hat, und eine Community (online ist völlig okay).</li>
+    </ul>
+
+    <h3>Rückschläge gehören dazu</h3>
+    <p>Du wirst irgendwann wieder reagieren — aus Versehen, aus Übermüdung, weil eine Küche nicht so sauber war, wie sie schien. Das ist kein Versagen. Das ist eine Info. Dein Job ist dann nicht, dich zu bestrafen, sondern zu überlegen: Was kann ich beim nächsten Mal anders machen? Und dann weitermachen.</p>
+
+    <div class="callout">
+      <strong>Der Satz, den ich mir selber oft sage:</strong> „Ich lebe nicht <em>gegen</em> meine Zöliakie. Ich lebe <em>mit</em> ihr.“ Der Unterschied ist minimal — und entscheidet alles.
+    </div>
+  </div>
+</section>
+
+<!-- ========== CHAPTER 10 / BONUS ========== -->
+<section class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8" id="k10">
+  <div class="book-page reveal">
+    <div class="chapter-num">10</div>
+    <div class="chapter-label">Bonus</div>
+    <h2>Checklisten zum Ausdrucken.</h2>
+    <p class="mt-6">Druck diese Seiten aus und häng sie dorthin, wo sie helfen: Küchenschrank, Reisetasche, Handschuhfach. Sie sind absichtlich kurz gehalten — damit du sie im Moment, in dem du sie brauchst, wirklich benutzt.</p>
+
+    <h3>✓ Küchen-Check (einmalig)</h3>
+    <ul>
+      <li>Eigener Toaster oder Toasterbeutel vorhanden</li>
+      <li>Eigene Holzbretter und Kochlöffel, farblich markiert</li>
+      <li>Eigenes Sieb</li>
+      <li>Eigene Butter- und Marmeladen-Gefäße</li>
+      <li>Glutenhaltige Lebensmittel in einem eigenen Regal-Fach</li>
+      <li>Arbeitsflächen-Reihenfolge: glutenfrei zuerst, dann normal</li>
+      <li>Vorrat an gf-Mehl, glutenfreien Haferflocken und Flohsamenschalen</li>
+    </ul>
+
+    <h3>✓ Restaurant-Check (vor jedem Besuch)</h3>
+    <ul>
+      <li>Speisekarte online angeschaut</li>
+      <li>Vorab angerufen und Zöliakie angesprochen</li>
+      <li>Reservierung mit Hinweis „Zöliakie — keine Spuren Gluten“</li>
+      <li>Beim Bestellen: freundlich, klar, nicht entschuldigend</li>
+      <li>Im Zweifel: nachfragen oder ein sicheres Basis-Gericht wählen</li>
+    </ul>
+
+    <h3>✓ Reise-Check (vor jeder Reise)</h3>
+    <ul>
+      <li>Unterkunft mit Küchenmöglichkeit geprüft</li>
+      <li>2–3 Restaurants vor Ort recherchiert</li>
+      <li>Übersetzungskarte in der Landessprache im Gepäck</li>
+      <li>Notfall-Snacks für 2 Tage</li>
+      <li>Medikamente gecheckt (Reisekrankheit etc., oft mit Weizenstärke)</li>
+      <li>Wenn Flug: glutenfreies Menü mindestens 24 h vorher angemeldet</li>
+    </ul>
+
+    <h3>✓ „Was darf ich essen?“ — Schnell-Liste</h3>
+    <ul>
+      <li><strong>Immer sicher:</strong> Obst, Gemüse (frisch), Kartoffeln, Reis, Mais, Hirse, Buchweizen, Quinoa, Hülsenfrüchte (unverarbeitet), Nüsse (unverarbeitet), frisches Fleisch, Fisch, Eier, Naturjoghurt, Milch, reine Butter, reine Pflanzenöle</li>
+      <li><strong>Sicher, wenn zertifiziert:</strong> Haferflocken, Müsli, Mehlmix, Pasta, Brot, Kekse, Sojasauce (Tamari)</li>
+      <li><strong>Immer prüfen:</strong> Wurst, Käse (in Gewürzmischung), Saucen, Dressings, fertige Suppen, Schokolade mit Waffel/Keks, Eis, Bonbons, Medikamente</li>
+      <li><strong>Nie:</strong> Weizen, Dinkel, Roggen, Gerste, Couscous, Bulgur, Seitan, Bier (außer ausdrücklich gf), Sojasauce, Malz</li>
+    </ul>
+
+    <h3>✓ Notfallkarte (für den Geldbeutel)</h3>
+    <div class="callout" style="font-family:'Fraunces',serif; font-size:1.05rem; line-height:1.6;">
+      „Ich habe <strong>Zöliakie</strong> — eine Autoimmunerkrankung, bei der ich auf Gluten reagiere. Bitte bereiten Sie mein Essen <strong>komplett ohne Gluten</strong> zu: kein Weizen, Dinkel, Roggen, Gerste, Hafer (außer zertifiziert), kein Paniermehl, keine Sojasauce, kein Mehl zum Andicken. Schon kleinste Spuren lösen eine Reaktion aus. <strong>Danke für Ihre Sorgfalt.</strong>“
+    </div>
+  </div>
+</section>
+
+<!-- ========== CLOSING ========== -->
+<section class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 pb-16">
+  <div class="book-page reveal text-center" style="padding: 4rem 3rem;">
+    <div class="chapter-label">Zum Schluss</div>
+    <h2 class="mt-4 mx-auto">Du wirst das hinbekommen.</h2>
+    <p class="mt-6 mx-auto text-brand-muted" style="max-width: 52ch;">
+      Die ersten Monate sind die schwersten. Danach wird es deine Normalität — eine, in die du langsam hineinwächst, mit Routinen, die du nicht mehr spürst, weil sie selbstverständlich sind. Ich bin auf dem Weg dahin gewesen, und wenn ich dir dabei helfen kann, freue ich mich.
+    </p>
+    <div class="mt-12 inline-flex items-center gap-3">
+      <div class="w-14 h-14 rounded-full overflow-hidden border border-brand-line">
+        <img src="brand_assets/Senta.JPG" alt="Senta Jacob" class="w-full h-full object-cover" width="800" height="600" loading="lazy" decoding="async">
+      </div>
+      <div class="text-left">
+        <div class="font-script text-2xl text-brand-charcoal leading-none">Alles Gute —</div>
+        <div class="font-display text-[1.05rem] text-brand-charcoal leading-tight mt-1">Senta Jacob</div>
+        <div class="text-xs text-brand-muted">senta@sentajacob.de</div>
+      </div>
+    </div>
+    <div class="mt-12 pt-8 border-t border-brand-line flex flex-col sm:flex-row items-center justify-center gap-3 no-print">
+      <a href="angebote-kontakt.html" class="btn btn-primary">Persönliche Beratung</a>
+      <a href="index.html" class="btn btn-ghost">Zurück zur Website</a>
+    </div>
+    <p class="mt-10 text-xs text-brand-muted max-w-[52ch] mx-auto">
+      Dieses eBook hat informativen Charakter und ersetzt keine ärztliche Beratung. Für Diagnose, Medikation und Verlauf bleibt deine Ärztin die erste Adresse. © Senta Jacob, Ausgabe 2026.
+    </p>
+  </div>
+</section>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
