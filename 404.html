@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Seite nicht gefunden — Senta Jacob</title>
+  <title>Seite nicht gefunden</title>
   <meta name="theme-color" content="#4F8A7A">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon.ico" sizes="32x32">
@@ -45,7 +45,22 @@
       letter-spacing: -0.025em;
       color: #1C2A25;
     }
-  </style>
+  
+/* Dropdown nav */
+.nav-dropdown{position:relative}
+.nav-dropdown-panel{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-8px);opacity:0;visibility:hidden;transition:opacity .22s ease,transform .22s ease,visibility .22s;z-index:100;pointer-events:none}
+.nav-dropdown:hover .nav-dropdown-panel,.nav-dropdown:focus-within .nav-dropdown-panel{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);pointer-events:auto}
+.nav-dropdown-link{display:block;padding:.5rem .85rem;border-radius:.85rem;font-size:.85rem;color:#2A3A34;transition:background-color .18s,color .18s;white-space:nowrap}
+.nav-dropdown-link:hover,.nav-dropdown-link:focus-visible{background:#EDF6F0;color:#3E6E61;outline:none}
+.nav-chevron{transition:transform .22s ease;flex-shrink:0;vertical-align:middle}
+.nav-dropdown:hover .nav-chevron,.nav-dropdown:focus-within .nav-chevron{transform:rotate(180deg)}
+/* Mobile nav categories */
+.mobile-nav-main{font-family:'Fraunces',Georgia,serif;font-size:1.55rem;color:#1C2A25;padding:.45rem .2rem;display:block;margin-bottom:.25rem;transition:color .2s}
+.mobile-nav-main:hover{color:#4F8A7A}
+.mobile-nav-category{font-size:.68rem;text-transform:uppercase;letter-spacing:.18em;color:#6F7A74;margin-top:1.35rem;margin-bottom:.4rem;padding:.95rem .2rem 0;border-top:1px solid rgba(28,42,37,0.08)}
+.mobile-nav-link{font-family:'Fraunces',Georgia,serif;font-size:1.2rem;color:#1C2A25;padding:.38rem .2rem;display:block;transition:color .2s}
+.mobile-nav-link:hover{color:#4F8A7A}
+</style>
 </head>
 <body class="min-h-screen flex flex-col items-center justify-center px-6 text-center">
   <div class="max-w-md">

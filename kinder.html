@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kinder & Zöliakie — Senta Jacob</title>
+<title>Kinder & Zöliakie</title>
 <meta name="description" content="Diagnose bei Kindern, kindgerechte Aufklärung, Kita, Schule, Geburtstage und der Umgang mit Knete und Fingerfarben.">
 <meta name="theme-color" content="#4F8A7A">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -12,7 +12,7 @@
 <link rel="manifest" href="site.webmanifest">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="de_DE">
-<meta property="og:title" content="Kinder & Zöliakie — Senta Jacob">
+<meta property="og:title" content="Kinder & Zöliakie">
 <meta property="og:description" content="Diagnose bei Kindern, kindgerechte Aufklärung, Kita, Schule, Geburtstage und der Umgang mit Knete und Fingerfarben.">
 <meta property="og:image" content="og-image.png">
 <script src="https://cdn.tailwindcss.com"></script>
@@ -66,6 +66,21 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .skip-link:focus{top:0;outline:2px solid #2F5448;outline-offset:2px}
 /* Print */
 @media print{.grain,header,#mobileMenu,.btn,.btn-primary,.btn-ghost,footer nav{display:none !important}body{background:white !important;color:black !important;font-size:12pt}a[href]::after{content:" (" attr(href) ")";font-size:.8em;color:#666}img{max-width:100% !important}h1,h2,h3{color:black !important;page-break-after:avoid}section{page-break-inside:avoid}}
+
+/* Dropdown nav */
+.nav-dropdown{position:relative}
+.nav-dropdown-panel{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-8px);opacity:0;visibility:hidden;transition:opacity .22s ease,transform .22s ease,visibility .22s;z-index:100;pointer-events:none}
+.nav-dropdown:hover .nav-dropdown-panel,.nav-dropdown:focus-within .nav-dropdown-panel{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);pointer-events:auto}
+.nav-dropdown-link{display:block;padding:.5rem .85rem;border-radius:.85rem;font-size:.85rem;color:#2A3A34;transition:background-color .18s,color .18s;white-space:nowrap}
+.nav-dropdown-link:hover,.nav-dropdown-link:focus-visible{background:#EDF6F0;color:#3E6E61;outline:none}
+.nav-chevron{transition:transform .22s ease;flex-shrink:0;vertical-align:middle}
+.nav-dropdown:hover .nav-chevron,.nav-dropdown:focus-within .nav-chevron{transform:rotate(180deg)}
+/* Mobile nav categories */
+.mobile-nav-main{font-family:'Fraunces',Georgia,serif;font-size:1.55rem;color:#1C2A25;padding:.45rem .2rem;display:block;margin-bottom:.25rem;transition:color .2s}
+.mobile-nav-main:hover{color:#4F8A7A}
+.mobile-nav-category{font-size:.68rem;text-transform:uppercase;letter-spacing:.18em;color:#6F7A74;margin-top:1.35rem;margin-bottom:.4rem;padding:.95rem .2rem 0;border-top:1px solid rgba(28,42,37,0.08)}
+.mobile-nav-link{font-family:'Fraunces',Georgia,serif;font-size:1.2rem;color:#1C2A25;padding:.38rem .2rem;display:block;transition:color .2s}
+.mobile-nav-link:hover{color:#4F8A7A}
 </style>
 </head>
 <body class="page-atmos">
@@ -76,44 +91,84 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 <header class="relative z-40">
   <div class="max-w-7xl mx-auto px-5 sm:px-8 pt-6">
     <div class="flex items-center justify-between bg-white/75 backdrop-blur-md rounded-full px-5 py-2.5 border border-black/5" style="box-shadow:0 14px 40px -24px rgba(47,84,72,.25)">
-      <a href="index.html" class="flex items-center gap-2.5">
-        <img src="brand_assets/logobetter.png" alt="Glutenfrei Logo" width="42" height="42" style="object-fit:contain; flex-shrink:0; mix-blend-mode:multiply;">
+      <a href="index.html" class="flex items-center gap-2.5" aria-label="Glutenfrei Leben — Startseite">
+        <img src="brand_assets/logobetter.png" alt="Glutenfrei Leben" width="42" height="42" style="object-fit:contain;flex-shrink:0;mix-blend-mode:multiply;">
         <span class="flex flex-col gap-[2px] leading-none">
-          <span class="font-display text-[1.05rem] leading-none tracking-tight text-brand-charcoal">senta<span class="text-brand-teal">.</span>jacob</span>
-          <span class="font-body text-[0.58rem] tracking-[0.14em] uppercase text-brand-muted">glutenfrei leben</span>
+          <span class="font-display text-[1.05rem] leading-none tracking-tight text-brand-charcoal">glutenfrei<span class="text-brand-teal">.</span>leben</span>
+          <span class="font-body text-[0.58rem] tracking-[0.14em] uppercase text-brand-muted">Zöliakie-Ratgeber</span>
         </span>
       </a>
-      <nav class="hidden lg:flex items-center gap-7 text-[0.88rem] text-brand-ink">
+      <nav class="hidden lg:flex items-center gap-6 text-[0.88rem] text-brand-ink">
         <a href="index.html" class="nav-link">Start</a>
-        <a href="zoeliakie-verstehen.html" class="nav-link" style="color:#4F8A7A">Zöliakie</a>
-        <a href="zuhause.html" class="nav-link">Zuhause</a>
-        <a href="produkte-shops.html" class="nav-link">Produkte</a>
-        <a href="auswaerts.html" class="nav-link">Auswärts</a>
-        <a href="reisen.html" class="nav-link">Reisen</a>
-        <a href="mindset.html" class="nav-link">Mindset</a>
-        <a href="angebote-kontakt.html" class="nav-link">Angebote</a>
+        <div class="nav-dropdown">
+          <button class="nav-link flex items-center gap-1.5" aria-haspopup="true" aria-expanded="false">Wissen <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="nav-chevron"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="nav-dropdown-panel">
+            <div class="bg-white/95 backdrop-blur-md rounded-2xl border border-black/5 p-2 min-w-[220px]" style="box-shadow:0 20px 50px -20px rgba(47,84,72,.3),0 8px 20px -12px rgba(47,84,72,.18)">
+              <a href="zoeliakie-verstehen.html" class="nav-dropdown-link">Zöliakie verstehen</a>
+              <a href="beschwerden-diagnose.html" class="nav-dropdown-link">Beschwerden &amp; Diagnose</a>
+              <a href="mindset.html" class="nav-dropdown-link">Mindset</a>
+            </div>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <button class="nav-link flex items-center gap-1.5" style="color:#4F8A7A" aria-haspopup="true" aria-expanded="false">Alltag <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="nav-chevron"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="nav-dropdown-panel">
+            <div class="bg-white/95 backdrop-blur-md rounded-2xl border border-black/5 p-2 min-w-[220px]" style="box-shadow:0 20px 50px -20px rgba(47,84,72,.3),0 8px 20px -12px rgba(47,84,72,.18)">
+              <a href="zuhause.html" class="nav-dropdown-link">Zuhause</a>
+              <a href="produkte-shops.html" class="nav-dropdown-link">Produkte &amp; Shops</a>
+              <a href="kinder.html" class="nav-dropdown-link" style="color:#4F8A7A;background:#EDF6F0">Kinder</a>
+              <a href="auswaerts.html" class="nav-dropdown-link">Auswärts essen</a>
+              <a href="reisen.html" class="nav-dropdown-link">Reisen</a>
+            </div>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <button class="nav-link flex items-center gap-1.5" aria-haspopup="true" aria-expanded="false">Angebote <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="nav-chevron"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="nav-dropdown-panel">
+            <div class="bg-white/95 backdrop-blur-md rounded-2xl border border-black/5 p-2 min-w-[220px]" style="box-shadow:0 20px 50px -20px rgba(47,84,72,.3),0 8px 20px -12px rgba(47,84,72,.18)">
+              <a href="ebook.html" class="nav-dropdown-link">eBook lesen</a>
+              <a href="angebote-kontakt.html" class="nav-dropdown-link">Beratung &amp; Kontakt</a>
+              <a href="gastronomie.html" class="nav-dropdown-link">Für Gastronomie</a>
+            </div>
+          </div>
+        </div>
       </nav>
       <div class="flex items-center gap-2">
-        <a href="angebote-kontakt.html" class="btn btn-primary hidden sm:inline-flex" style="padding:.6rem 1.1rem;font-size:.85rem">eBook holen</a>
+        <a href="ebook.html" class="btn btn-primary hidden sm:inline-flex" style="padding:.6rem 1.1rem;font-size:.85rem">eBook holen <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
         <button id="menuBtn" class="lg:hidden w-10 h-10 rounded-full flex items-center justify-center bg-white border border-black/5" aria-label="Menü"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
       </div>
     </div>
   </div>
 </header>
-
-<div id="mobileMenu" class="mobile-menu fixed inset-0 z-50 bg-brand-cream lg:hidden" style="background:#F7F2E9;">
+<div id="mobileMenu" class="mobile-menu fixed inset-0 z-50 lg:hidden" style="background:#F7F2E9;overflow-y:auto;">
   <div class="flex items-center justify-between px-6 pt-7">
     <div class="flex items-center gap-2">
-      <img src="brand_assets/logobetter.png" alt="Glutenfrei Logo" width="36" height="36" style="object-fit:contain; mix-blend-mode:multiply;">
+      <img src="brand_assets/logobetter.png" alt="Glutenfrei Leben" width="36" height="36" style="object-fit:contain;mix-blend-mode:multiply;">
       <span class="flex flex-col gap-[1px] leading-none">
-        <span class="font-display text-lg">senta<span class="text-brand-teal">.</span>jacob</span>
-        <span class="font-body text-[0.5rem] tracking-[0.13em] uppercase text-brand-muted">glutenfrei leben</span>
+        <span class="font-display text-lg">glutenfrei<span class="text-brand-teal">.</span>leben</span>
+        <span class="font-body text-[0.5rem] tracking-[0.13em] uppercase text-brand-muted">Zöliakie-Ratgeber</span>
       </span>
     </div>
-    <button id="menuClose" class="w-10 h-10 rounded-full bg-white border border-black/5" aria-label="Menü schließen"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="mx-auto"><path d="M6 6l12 12M6 18L18 6"/></svg></button>
+    <button id="menuClose" class="w-10 h-10 rounded-full bg-white border border-black/5 flex items-center justify-center" aria-label="Menü schließen">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M6 18L18 6"/></svg>
+    </button>
   </div>
-  <nav class="px-8 pt-10 flex flex-col gap-5 text-2xl font-display text-brand-charcoal">
-    <a href="index.html">Start</a><a href="zoeliakie-verstehen.html">Zöliakie verstehen</a><a href="beschwerden-diagnose.html">Beschwerden & Diagnose</a><a href="zuhause.html">Zuhause</a><a href="produkte-shops.html">Produkte & Shops</a><a href="kinder.html">Kinder</a><a href="auswaerts.html">Auswärts essen</a><a href="reisen.html">Reisen</a><a href="mindset.html">Mindset</a><a href="gastronomie.html">Gastronomie</a><a href="angebote-kontakt.html">Angebote & Kontakt</a>
+  <nav class="px-7 pt-8 pb-10 flex flex-col">
+    <a href="index.html" class="mobile-nav-main">Start</a>
+    <div class="mobile-nav-category">Wissen</div>
+    <a href="zoeliakie-verstehen.html" class="mobile-nav-link">Zöliakie verstehen</a>
+    <a href="beschwerden-diagnose.html" class="mobile-nav-link">Beschwerden &amp; Diagnose</a>
+    <a href="mindset.html" class="mobile-nav-link">Mindset</a>
+    <div class="mobile-nav-category">Alltag</div>
+    <a href="zuhause.html" class="mobile-nav-link">Zuhause</a>
+    <a href="produkte-shops.html" class="mobile-nav-link">Produkte &amp; Shops</a>
+    <a href="kinder.html" class="mobile-nav-link">Kinder</a>
+    <a href="auswaerts.html" class="mobile-nav-link">Auswärts essen</a>
+    <a href="reisen.html" class="mobile-nav-link">Reisen</a>
+    <div class="mobile-nav-category">Angebote</div>
+    <a href="ebook.html" class="mobile-nav-link">eBook lesen</a>
+    <a href="angebote-kontakt.html" class="mobile-nav-link">Beratung &amp; Kontakt</a>
+    <a href="gastronomie.html" class="mobile-nav-link">Für Gastronomie</a>
   </nav>
 </div>
 
@@ -197,9 +252,19 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
           <a href="index.html#freebie" class="btn btn-primary" style="background:#fff;color:#1C2A25">Checkliste holen</a>
         </div>
       </div>
-      <div class="col-span-12 lg:col-span-4 relative min-h-[220px]">
-        <img src="brand_assets/Senta.JPG" alt="Senta Jacob" class="absolute inset-0 w-full h-full object-cover" width="800" height="600">
-        <div class="absolute inset-0" style="background:linear-gradient(90deg,rgba(28,42,37,0.85) 0%,rgba(28,42,37,0) 100%)"></div>
+      <div class="col-span-12 lg:col-span-4 relative min-h-[220px] flex items-center justify-center overflow-hidden" style="background:linear-gradient(135deg,#2F5448 0%,#1C2A25 100%)">
+        <div class="absolute inset-0" style="background:linear-gradient(90deg,rgba(28,42,37,0.7) 0%,rgba(28,42,37,0) 60%)"></div>
+        <svg class="absolute opacity-[0.12]" width="340" height="340" viewBox="0 0 100 100" fill="none" stroke="white" stroke-width="0.5"><circle cx="50" cy="50" r="46"/><circle cx="50" cy="50" r="36"/><circle cx="50" cy="50" r="26"/><circle cx="50" cy="50" r="16"/><line x1="50" y1="4" x2="50" y2="96"/><line x1="4" y1="50" x2="96" y2="50"/><line x1="18" y1="18" x2="82" y2="82"/><line x1="82" y1="18" x2="18" y2="82"/></svg>
+        <div class="relative flex flex-col items-center gap-3 px-6 py-8">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="opacity-80">
+            <ellipse cx="24" cy="38" rx="10" ry="4" fill="#A8D6C6" fill-opacity="0.25"/>
+            <path d="M24 8 C20 14 14 16 14 24 C14 31 18.5 36 24 36 C29.5 36 34 31 34 24 C34 16 28 14 24 8Z" fill="#4F8A7A" opacity="0.9"/>
+            <path d="M24 8 C24 8 24 22 24 36" stroke="#A8D6C6" stroke-width="1" stroke-opacity="0.6"/>
+            <path d="M24 18 C24 18 20 20 18 24" stroke="#A8D6C6" stroke-width="0.8" stroke-opacity="0.5" stroke-linecap="round"/>
+            <path d="M24 22 C24 22 28 24 30 28" stroke="#A8D6C6" stroke-width="0.8" stroke-opacity="0.5" stroke-linecap="round"/>
+          </svg>
+          <div style="font-family:'Fraunces',serif;color:#E8F3EC;font-size:0.85rem;text-align:center;line-height:1.5;opacity:0.85;">Von Natur<br>aus glutenfrei</div>
+        </div>
       </div>
     </div>
   </div>
@@ -215,7 +280,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
           <img src="brand_assets/logobetter.png" alt="Glutenfrei Logo" width="40" height="40" class="block rounded-full" style="object-fit:contain;">
         </span>
         <span class="flex flex-col gap-[3px] leading-none">
-          <span class="font-display text-[1.05rem] leading-none text-white">senta<span class="text-brand-mint">.</span>jacob</span>
+          <span class="font-display text-[1.05rem] leading-none text-white">glutenfrei<span class="text-brand-mint">.</span>leben</span>
           <span class="font-body text-[0.55rem] tracking-[0.13em] uppercase text-white/75">glutenfrei leben</span>
         </span>
       </div>
@@ -225,7 +290,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     <div class="col-span-6 md:col-span-2"><div class="text-xs uppercase tracking-[0.15em] text-white/90 font-medium">Alltag</div><ul class="mt-4 space-y-2.5 text-sm"><li><a href="zuhause.html" class="hover:text-white">Zuhause</a></li><li><a href="produkte-shops.html" class="hover:text-white">Produkte & Shops</a></li><li><a href="kinder.html" class="hover:text-white">Kinder</a></li><li><a href="auswaerts.html" class="hover:text-white">Auswärts essen</a></li><li><a href="reisen.html" class="hover:text-white">Reisen</a></li></ul></div>
     <div class="col-span-12 md:col-span-4"><div class="text-xs uppercase tracking-[0.15em] text-white/90 font-medium">Angebote</div><ul class="mt-4 space-y-2.5 text-sm"><li><a href="ebook.html" class="hover:text-white">eBook lesen</a></li><li><a href="angebote-kontakt.html" class="hover:text-white">Beratung</a></li><li><a href="gastronomie.html" class="hover:text-white">Für Gastronomie</a></li><li><a href="angebote-kontakt.html" class="hover:text-white">Kontakt</a></li></ul></div>
   </div>
-  <div class="border-t border-white/15"><div class="max-w-7xl mx-auto px-5 sm:px-8 py-5 flex flex-col sm:flex-row justify-between gap-3 text-xs text-white/75"><div>© <span id="year"></span> Senta Jacob</div><div class="flex gap-5"><a href="impressum.html" class="hover:text-white/90">Impressum</a><a href="datenschutz.html" class="hover:text-white/90">Datenschutz</a></div></div></div>
+  <div class="border-t border-white/15"><div class="max-w-7xl mx-auto px-5 sm:px-8 py-5 flex flex-col sm:flex-row justify-between gap-3 text-xs text-white/75"><div>© <span id="year"></span> Glutenfrei Leben</div><div class="flex gap-5"><a href="impressum.html" class="hover:text-white/90">Impressum</a><a href="datenschutz.html" class="hover:text-white/90">Datenschutz</a></div></div></div>
 </footer>
 
 <script>

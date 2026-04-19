@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>eBook · Glutenfrei leben mit Zöliakie — Senta Jacob</title>
-  <meta name="description" content="Dein sicherer Einstieg ohne Stress. Das eBook von Senta Jacob für Menschen mit Zöliakie.">
+  <title>eBook · Glutenfrei leben mit Zöliakie</title>
+  <meta name="description" content="Dein sicherer Einstieg ohne Stress. Das eBook für Menschen mit Zöliakie.">
   <meta name="theme-color" content="#4F8A7A">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon.ico" sizes="32x32">
@@ -12,8 +12,8 @@
 <link rel="manifest" href="site.webmanifest">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="de_DE">
-<meta property="og:title" content="eBook · Glutenfrei leben mit Zöliakie — Senta Jacob">
-<meta property="og:description" content="Dein sicherer Einstieg ohne Stress. Das eBook von Senta Jacob für Menschen mit Zöliakie.">
+<meta property="og:title" content="eBook · Glutenfrei leben mit Zöliakie">
+<meta property="og:description" content="Dein sicherer Einstieg ohne Stress. Das eBook für Menschen mit Zöliakie.">
 <meta property="og:image" content="og-image.png">
 <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -96,6 +96,21 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .skip-link:focus{top:0;outline:2px solid #2F5448;outline-offset:2px}
 /* Print */
 @media print{.grain,header,#mobileMenu,.btn,.btn-primary,.btn-ghost,footer nav{display:none !important}body{background:white !important;color:black !important;font-size:12pt}a[href]::after{content:" (" attr(href) ")";font-size:.8em;color:#666}img{max-width:100% !important}h1,h2,h3{color:black !important;page-break-after:avoid}section{page-break-inside:avoid}}
+
+/* Dropdown nav */
+.nav-dropdown{position:relative}
+.nav-dropdown-panel{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-8px);opacity:0;visibility:hidden;transition:opacity .22s ease,transform .22s ease,visibility .22s;z-index:100;pointer-events:none}
+.nav-dropdown:hover .nav-dropdown-panel,.nav-dropdown:focus-within .nav-dropdown-panel{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);pointer-events:auto}
+.nav-dropdown-link{display:block;padding:.5rem .85rem;border-radius:.85rem;font-size:.85rem;color:#2A3A34;transition:background-color .18s,color .18s;white-space:nowrap}
+.nav-dropdown-link:hover,.nav-dropdown-link:focus-visible{background:#EDF6F0;color:#3E6E61;outline:none}
+.nav-chevron{transition:transform .22s ease;flex-shrink:0;vertical-align:middle}
+.nav-dropdown:hover .nav-chevron,.nav-dropdown:focus-within .nav-chevron{transform:rotate(180deg)}
+/* Mobile nav categories */
+.mobile-nav-main{font-family:'Fraunces',Georgia,serif;font-size:1.55rem;color:#1C2A25;padding:.45rem .2rem;display:block;margin-bottom:.25rem;transition:color .2s}
+.mobile-nav-main:hover{color:#4F8A7A}
+.mobile-nav-category{font-size:.68rem;text-transform:uppercase;letter-spacing:.18em;color:#6F7A74;margin-top:1.35rem;margin-bottom:.4rem;padding:.95rem .2rem 0;border-top:1px solid rgba(28,42,37,0.08)}
+.mobile-nav-link{font-family:'Fraunces',Georgia,serif;font-size:1.2rem;color:#1C2A25;padding:.38rem .2rem;display:block;transition:color .2s}
+.mobile-nav-link:hover{color:#4F8A7A}
 </style>
 </head>
 <body class="page-atmos">
@@ -109,7 +124,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       <a href="index.html" class="flex items-center gap-2.5">
         <img src="brand_assets/logobetter.png" alt="Glutenfrei Logo" width="42" height="42" style="object-fit:contain; flex-shrink:0; mix-blend-mode:multiply;">
         <span class="flex flex-col gap-[2px] leading-none">
-          <span class="font-display text-[1.05rem] leading-none tracking-tight text-brand-charcoal">senta<span class="text-brand-teal">.</span>jacob</span>
+          <span class="font-display text-[1.05rem] leading-none tracking-tight text-brand-charcoal">glutenfrei<span class="text-brand-teal">.</span>leben</span>
           <span class="font-body text-[0.58rem] tracking-[0.14em] uppercase text-brand-muted">glutenfrei leben</span>
         </span>
       </a>
@@ -141,12 +156,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
           Ein Begleiter für die ersten Wochen nach der Diagnose. Für alle, die gerade erfahren haben: „Du hast Zöliakie.“ Und nicht wissen, wo sie anfangen sollen.
         </p>
         <div class="mt-12 flex items-center gap-3">
-          <div class="w-14 h-14 rounded-full overflow-hidden border border-brand-line">
-            <img src="brand_assets/Senta.JPG" alt="Senta Jacob" class="w-full h-full object-cover" width="800" height="600">
+          <div class="w-14 h-14 rounded-full overflow-hidden border border-brand-line flex items-center justify-center" style="background:linear-gradient(155deg,#4F8A7A,#2F5448)">
+            <svg width="28" height="28" viewBox="0 0 48 48" fill="none"><path d="M24 8 C20 14 14 16 14 24 C14 31 18.5 36 24 36 C29.5 36 34 31 34 24 C34 16 28 14 24 8Z" fill="#A8D6C6"/><path d="M24 8 C24 8 24 22 24 36" stroke="white" stroke-width="1" stroke-opacity="0.5"/></svg>
           </div>
           <div>
-            <div class="font-display text-[1.05rem] text-brand-charcoal leading-tight">Senta Jacob</div>
-            <div class="text-xs text-brand-muted">Glutenfrei-Begleiterin · seit 2011</div>
+            <div class="font-display text-[1.05rem] text-brand-charcoal leading-tight">Glutenfrei Leben</div>
+            <div class="text-xs text-brand-muted">Dein Zöliakie-Ratgeber</div>
           </div>
         </div>
       </div>
@@ -560,16 +575,16 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     <div class="chapter-label">Zum Schluss</div>
     <h2 class="mt-4 mx-auto">Du wirst das hinbekommen.</h2>
     <p class="mt-6 mx-auto text-brand-muted" style="max-width: 52ch;">
-      Die ersten Monate sind die schwersten. Danach wird es deine Normalität — eine, in die du langsam hineinwächst, mit Routinen, die du nicht mehr spürst, weil sie selbstverständlich sind. Ich bin auf dem Weg dahin gewesen, und wenn ich dir dabei helfen kann, freue ich mich.
+      Die ersten Monate sind die schwersten. Danach wird es deine Normalität — eine, in die du langsam hineinwächst, mit Routinen, die du nicht mehr spürst, weil sie selbstverständlich sind. Glutenfrei Leben begleitet dich auf diesem Weg.
     </p>
     <div class="mt-12 inline-flex items-center gap-3">
-      <div class="w-14 h-14 rounded-full overflow-hidden border border-brand-line">
-        <img src="brand_assets/Senta.JPG" alt="Senta Jacob" class="w-full h-full object-cover" width="800" height="600" loading="lazy" decoding="async">
+      <div class="w-14 h-14 rounded-full overflow-hidden border border-brand-line flex items-center justify-center" style="background:linear-gradient(155deg,#4F8A7A,#2F5448)">
+        <svg width="28" height="28" viewBox="0 0 48 48" fill="none"><path d="M24 8 C20 14 14 16 14 24 C14 31 18.5 36 24 36 C29.5 36 34 31 34 24 C34 16 28 14 24 8Z" fill="#A8D6C6"/><path d="M24 8 C24 8 24 22 24 36" stroke="white" stroke-width="1" stroke-opacity="0.5"/></svg>
       </div>
       <div class="text-left">
         <div class="font-script text-2xl text-brand-charcoal leading-none">Alles Gute —</div>
-        <div class="font-display text-[1.05rem] text-brand-charcoal leading-tight mt-1">Senta Jacob</div>
-        <div class="text-xs text-brand-muted">senta@sentajacob.de</div>
+        <div class="font-display text-[1.05rem] text-brand-charcoal leading-tight mt-1">Glutenfrei Leben Team</div>
+        <div class="text-xs text-brand-muted">info@glutenfreileben.de</div>
       </div>
     </div>
     <div class="mt-12 pt-8 border-t border-brand-line flex flex-col sm:flex-row items-center justify-center gap-3 no-print">
@@ -577,7 +592,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       <a href="index.html" class="btn btn-ghost">Zurück zur Website</a>
     </div>
     <p class="mt-10 text-xs text-brand-muted max-w-[52ch] mx-auto">
-      Dieses eBook hat informativen Charakter und ersetzt keine ärztliche Beratung. Für Diagnose, Medikation und Verlauf bleibt deine Ärztin die erste Adresse. © Senta Jacob, Ausgabe 2026.
+      Dieses eBook hat informativen Charakter und ersetzt keine ärztliche Beratung. Für Diagnose, Medikation und Verlauf bleibt deine Ärztin die erste Adresse. © Glutenfrei Leben, Ausgabe 2026.
     </p>
   </div>
 </section>

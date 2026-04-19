@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Senta Jacob — Glutenfrei leben mit Zöliakie</title>
-  <meta name="description" content="Senta Jacob begleitet Menschen mit Zöliakie in ein glutenfreies Leben — sicher, alltagstauglich, stressfrei. Wissen, Tipps, Freebie & eBook.">
+  <title>Glutenfrei leben mit Zöliakie</title>
+  <meta name="description" content="Glutenfrei Leben begleitet Menschen mit Zöliakie in ein glutenfreies Leben — sicher, alltagstauglich, stressfrei. Wissen, Tipps, Freebie & eBook.">
   <meta name="theme-color" content="#4F8A7A">
 
   <!-- Favicon & Touch Icons -->
@@ -16,15 +16,13 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="de_DE">
-  <meta property="og:title" content="Senta Jacob — Glutenfrei leben mit Zöliakie">
-  <meta property="og:description" content="Senta Jacob begleitet Menschen mit Zöliakie in ein glutenfreies Leben — sicher, alltagstauglich, stressfrei.">
+  <meta property="og:title" content="Glutenfrei leben mit Zöliakie">
+  <meta property="og:description" content="Glutenfrei Leben begleitet Menschen mit Zöliakie in ein glutenfreies Leben — sicher, alltagstauglich, stressfrei.">
   <meta property="og:image" content="og-image.png">
-  <meta property="og:url" content="https://sentajacob.de/">
+  <meta property="og:url" content="https://glutenfreileben.de/">
 
-  <!-- Preload LCP hero image -->
-  <link rel="preload" as="image" href="brand_assets/Senta.JPG">
 
-  <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
@@ -251,7 +249,22 @@
       h1, h2, h3 { color: black !important; page-break-after: avoid; }
       section { page-break-inside: avoid; }
     }
-  </style>
+  
+/* Dropdown nav */
+.nav-dropdown{position:relative}
+.nav-dropdown-panel{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-8px);opacity:0;visibility:hidden;transition:opacity .22s ease,transform .22s ease,visibility .22s;z-index:100;pointer-events:none}
+.nav-dropdown:hover .nav-dropdown-panel,.nav-dropdown:focus-within .nav-dropdown-panel{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);pointer-events:auto}
+.nav-dropdown-link{display:block;padding:.5rem .85rem;border-radius:.85rem;font-size:.85rem;color:#2A3A34;transition:background-color .18s,color .18s;white-space:nowrap}
+.nav-dropdown-link:hover,.nav-dropdown-link:focus-visible{background:#EDF6F0;color:#3E6E61;outline:none}
+.nav-chevron{transition:transform .22s ease;flex-shrink:0;vertical-align:middle}
+.nav-dropdown:hover .nav-chevron,.nav-dropdown:focus-within .nav-chevron{transform:rotate(180deg)}
+/* Mobile nav categories */
+.mobile-nav-main{font-family:'Fraunces',Georgia,serif;font-size:1.55rem;color:#1C2A25;padding:.45rem .2rem;display:block;margin-bottom:.25rem;transition:color .2s}
+.mobile-nav-main:hover{color:#4F8A7A}
+.mobile-nav-category{font-size:.68rem;text-transform:uppercase;letter-spacing:.18em;color:#6F7A74;margin-top:1.35rem;margin-bottom:.4rem;padding:.95rem .2rem 0;border-top:1px solid rgba(28,42,37,0.08)}
+.mobile-nav-link{font-family:'Fraunces',Georgia,serif;font-size:1.2rem;color:#1C2A25;padding:.38rem .2rem;display:block;transition:color .2s}
+.mobile-nav-link:hover{color:#4F8A7A}
+</style>
 </head>
 <body class="page-atmos">
 
@@ -261,77 +274,96 @@
 <!-- Grain overlay -->
 <div class="grain fixed inset-0 -z-0"></div>
 
-<!-- ======================== NAV ======================== -->
+<!-- NAV -->
 <header class="relative z-40">
   <div class="max-w-7xl mx-auto px-5 sm:px-8 pt-6">
-    <div class="flex items-center justify-between bg-white/70 backdrop-blur-md rounded-full px-5 py-2.5 border border-black/5" style="box-shadow: 0 14px 40px -24px rgba(47,84,72,.25);">
-      <!-- Logo -->
-      <a href="index.html" class="flex items-center gap-2.5 group" aria-label="Senta Jacob — Startseite">
-        <img src="brand_assets/logobetter.png" alt="Glutenfrei Logo" width="42" height="42" style="object-fit:contain; flex-shrink:0; mix-blend-mode:multiply;">
+    <div class="flex items-center justify-between bg-white/75 backdrop-blur-md rounded-full px-5 py-2.5 border border-black/5" style="box-shadow:0 14px 40px -24px rgba(47,84,72,.25)">
+      <a href="index.html" class="flex items-center gap-2.5" aria-label="Glutenfrei Leben — Startseite">
+        <img src="brand_assets/logobetter.png" alt="Glutenfrei Leben" width="42" height="42" style="object-fit:contain;flex-shrink:0;mix-blend-mode:multiply;">
         <span class="flex flex-col gap-[2px] leading-none">
-          <span class="font-display text-[1.05rem] leading-none tracking-tight text-brand-charcoal">senta<span class="text-brand-teal">.</span>jacob</span>
-          <span class="font-body text-[0.58rem] tracking-[0.14em] uppercase text-brand-muted">glutenfrei leben</span>
+          <span class="font-display text-[1.05rem] leading-none tracking-tight text-brand-charcoal">glutenfrei<span class="text-brand-teal">.</span>leben</span>
+          <span class="font-body text-[0.58rem] tracking-[0.14em] uppercase text-brand-muted">Zöliakie-Ratgeber</span>
         </span>
       </a>
-      <!-- Menu -->
-      <nav class="hidden lg:flex items-center gap-7 text-[0.88rem] text-brand-ink">
-        <a href="index.html" class="nav-link">Start</a>
-        <a href="zoeliakie-verstehen.html" class="nav-link">Zöliakie</a>
-        <a href="zuhause.html" class="nav-link">Zuhause</a>
-        <a href="produkte-shops.html" class="nav-link">Produkte</a>
-        <a href="auswaerts.html" class="nav-link">Auswärts</a>
-        <a href="reisen.html" class="nav-link">Reisen</a>
-        <a href="mindset.html" class="nav-link">Mindset</a>
-        <a href="angebote-kontakt.html" class="nav-link">Angebote</a>
+      <nav class="hidden lg:flex items-center gap-6 text-[0.88rem] text-brand-ink">
+        <a href="index.html" class="nav-link" style="color:#4F8A7A">Start</a>
+        <div class="nav-dropdown">
+          <button class="nav-link flex items-center gap-1.5" aria-haspopup="true" aria-expanded="false">Wissen <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="nav-chevron"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="nav-dropdown-panel">
+            <div class="bg-white/95 backdrop-blur-md rounded-2xl border border-black/5 p-2 min-w-[220px]" style="box-shadow:0 20px 50px -20px rgba(47,84,72,.3),0 8px 20px -12px rgba(47,84,72,.18)">
+              <a href="zoeliakie-verstehen.html" class="nav-dropdown-link">Zöliakie verstehen</a>
+              <a href="beschwerden-diagnose.html" class="nav-dropdown-link">Beschwerden &amp; Diagnose</a>
+              <a href="mindset.html" class="nav-dropdown-link">Mindset</a>
+            </div>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <button class="nav-link flex items-center gap-1.5" aria-haspopup="true" aria-expanded="false">Alltag <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="nav-chevron"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="nav-dropdown-panel">
+            <div class="bg-white/95 backdrop-blur-md rounded-2xl border border-black/5 p-2 min-w-[220px]" style="box-shadow:0 20px 50px -20px rgba(47,84,72,.3),0 8px 20px -12px rgba(47,84,72,.18)">
+              <a href="zuhause.html" class="nav-dropdown-link">Zuhause</a>
+              <a href="produkte-shops.html" class="nav-dropdown-link">Produkte &amp; Shops</a>
+              <a href="kinder.html" class="nav-dropdown-link">Kinder</a>
+              <a href="auswaerts.html" class="nav-dropdown-link">Auswärts essen</a>
+              <a href="reisen.html" class="nav-dropdown-link">Reisen</a>
+            </div>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <button class="nav-link flex items-center gap-1.5" aria-haspopup="true" aria-expanded="false">Angebote <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="nav-chevron"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="nav-dropdown-panel">
+            <div class="bg-white/95 backdrop-blur-md rounded-2xl border border-black/5 p-2 min-w-[220px]" style="box-shadow:0 20px 50px -20px rgba(47,84,72,.3),0 8px 20px -12px rgba(47,84,72,.18)">
+              <a href="ebook.html" class="nav-dropdown-link">eBook lesen</a>
+              <a href="angebote-kontakt.html" class="nav-dropdown-link">Beratung &amp; Kontakt</a>
+              <a href="gastronomie.html" class="nav-dropdown-link">Für Gastronomie</a>
+            </div>
+          </div>
+        </div>
       </nav>
       <div class="flex items-center gap-2">
-        <a href="angebote-kontakt.html" class="btn btn-primary hidden sm:inline-flex" style="padding:.6rem 1.1rem; font-size:.85rem;">
-          eBook holen
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-        </a>
-        <button id="menuBtn" class="lg:hidden w-10 h-10 rounded-full flex items-center justify-center bg-white border border-black/5" aria-label="Menü">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-        </button>
+        <a href="ebook.html" class="btn btn-primary hidden sm:inline-flex" style="padding:.6rem 1.1rem;font-size:.85rem">eBook holen <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+        <button id="menuBtn" class="lg:hidden w-10 h-10 rounded-full flex items-center justify-center bg-white border border-black/5" aria-label="Menü"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
       </div>
     </div>
   </div>
 </header>
-
-<!-- Mobile menu overlay -->
-<div id="mobileMenu" class="mobile-menu fixed inset-0 z-50 bg-brand-cream lg:hidden" style="background:#F7F2E9;">
+<div id="mobileMenu" class="mobile-menu fixed inset-0 z-50 lg:hidden" style="background:#F7F2E9;overflow-y:auto;">
   <div class="flex items-center justify-between px-6 pt-7">
     <div class="flex items-center gap-2">
-      <img src="brand_assets/logobetter.png" alt="Glutenfrei Logo" width="36" height="36" style="object-fit:contain; mix-blend-mode:multiply;">
+      <img src="brand_assets/logobetter.png" alt="Glutenfrei Leben" width="36" height="36" style="object-fit:contain;mix-blend-mode:multiply;">
       <span class="flex flex-col gap-[1px] leading-none">
-        <span class="font-display text-lg">senta<span class="text-brand-teal">.</span>jacob</span>
-        <span class="font-body text-[0.5rem] tracking-[0.13em] uppercase text-brand-muted">glutenfrei leben</span>
+        <span class="font-display text-lg">glutenfrei<span class="text-brand-teal">.</span>leben</span>
+        <span class="font-body text-[0.5rem] tracking-[0.13em] uppercase text-brand-muted">Zöliakie-Ratgeber</span>
       </span>
     </div>
-    <button id="menuClose" class="w-10 h-10 rounded-full bg-white border border-black/5" aria-label="Menü schließen">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="mx-auto"><path d="M6 6l12 12M6 18L18 6"/></svg>
+    <button id="menuClose" class="w-10 h-10 rounded-full bg-white border border-black/5 flex items-center justify-center" aria-label="Menü schließen">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M6 18L18 6"/></svg>
     </button>
   </div>
-  <nav class="px-8 pt-10 flex flex-col gap-5 text-2xl font-display text-brand-charcoal">
-    <a href="index.html">Start</a>
-    <a href="zoeliakie-verstehen.html">Zöliakie verstehen</a>
-    <a href="beschwerden-diagnose.html">Beschwerden & Diagnose</a>
-    <a href="zuhause.html">Zuhause</a>
-    <a href="produkte-shops.html">Produkte & Shops</a>
-    <a href="kinder.html">Kinder</a>
-    <a href="auswaerts.html">Auswärts essen</a>
-    <a href="reisen.html">Reisen</a>
-    <a href="mindset.html">Mindset</a>
-    <a href="gastronomie.html">Gastronomie</a>
-    <a href="angebote-kontakt.html">Angebote & Kontakt</a>
+  <nav class="px-7 pt-8 pb-10 flex flex-col">
+    <a href="index.html" class="mobile-nav-main">Start</a>
+    <div class="mobile-nav-category">Wissen</div>
+    <a href="zoeliakie-verstehen.html" class="mobile-nav-link">Zöliakie verstehen</a>
+    <a href="beschwerden-diagnose.html" class="mobile-nav-link">Beschwerden &amp; Diagnose</a>
+    <a href="mindset.html" class="mobile-nav-link">Mindset</a>
+    <div class="mobile-nav-category">Alltag</div>
+    <a href="zuhause.html" class="mobile-nav-link">Zuhause</a>
+    <a href="produkte-shops.html" class="mobile-nav-link">Produkte &amp; Shops</a>
+    <a href="kinder.html" class="mobile-nav-link">Kinder</a>
+    <a href="auswaerts.html" class="mobile-nav-link">Auswärts essen</a>
+    <a href="reisen.html" class="mobile-nav-link">Reisen</a>
+    <div class="mobile-nav-category">Angebote</div>
+    <a href="ebook.html" class="mobile-nav-link">eBook lesen</a>
+    <a href="angebote-kontakt.html" class="mobile-nav-link">Beratung &amp; Kontakt</a>
+    <a href="gastronomie.html" class="mobile-nav-link">Für Gastronomie</a>
   </nav>
 </div>
 
-<!-- ======================== HERO ======================== -->
 <main id="main-content">
 <section class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 pt-10 sm:pt-16 pb-8">
   <div class="grid grid-cols-12 gap-5 lg:gap-6">
     <!-- Big hero card -->
-    <div class="col-span-12 lg:col-span-8 relative card overflow-hidden" data-stagger style="padding: 2.75rem 2.25rem 2.5rem; background: linear-gradient(155deg,#FFFFFF 0%, #F6FBF7 45%, #E8F3EC 100%);">
+    <div class="col-span-12 relative card overflow-hidden" data-stagger style="padding: 2.75rem 2.25rem 2.5rem; background: linear-gradient(155deg,#FFFFFF 0%, #F6FBF7 45%, #E8F3EC 100%);">
       <!-- Decorative leaf -->
       <svg class="absolute -right-10 -top-10 opacity-[0.07] pointer-events-none" width="360" height="360" viewBox="0 0 200 200" fill="none" stroke="#2F5448" stroke-width="1">
         <path d="M100 20 C 140 60, 140 140, 100 180 C 60 140, 60 60, 100 20 Z"/>
@@ -349,7 +381,7 @@
       </h1>
 
       <p class="reveal mt-6 max-w-[48ch] text-[1.02rem] text-brand-muted" style="--i:2;">
-        Ich bin Senta Jacob. Ich begleite Menschen mit Zöliakie durch die erste Unsicherheit nach der Diagnose bis zu einem glutenfreien Leben, das sich leicht, natürlich und alltagstauglich anfühlt.
+        Glutenfrei Leben begleitet Menschen mit Zöliakie — von der ersten Unsicherheit nach der Diagnose bis zu einem Leben, das sich leicht, natürlich und alltagstauglich anfühlt.
       </p>
 
       <div class="reveal mt-8 flex flex-wrap items-center gap-3" style="--i:3;">
@@ -380,74 +412,75 @@
       </div>
     </div>
 
-    <!-- Photo card -->
-    <div class="col-span-12 lg:col-span-4 relative">
-      <div class="card card-floating reveal h-full overflow-hidden" style="--i:2; padding:0;">
-        <div class="relative h-[420px] lg:h-full min-h-[420px]">
-          <img src="brand_assets/Senta.JPG" alt="Senta Jacob — Zöliakie-Beraterin" width="800" height="600" class="absolute inset-0 w-full h-full object-cover" style="filter: saturate(0.95) contrast(1.02);">
-          <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(28,42,37,0) 45%, rgba(28,42,37,0.55) 100%);"></div>
-          <!-- Floating glass card -->
-          <div class="absolute left-5 bottom-5 right-5 rounded-2xl p-4 flex items-center gap-3" style="background: rgba(255,255,255,0.82); backdrop-filter: blur(14px); border:1px solid rgba(255,255,255,0.6); box-shadow: 0 20px 40px -20px rgba(0,0,0,.35);">
-            <div class="w-11 h-11 rounded-full bg-brand-teal/10 flex items-center justify-center text-brand-teal">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-11a5 5 0 019-3 5 5 0 019 3c0 6.5-7 11-7 11z" transform="translate(-2 0)"/></svg>
-            </div>
-            <div class="min-w-0">
-              <div class="font-display text-[1rem] leading-tight text-brand-charcoal">Persönlich begleitet</div>
-              <div class="text-xs text-brand-muted mt-0.5 truncate">Mit Erfahrung aus 15 Jahren Zöliakie.</div>
-            </div>
-          </div>
-          <!-- Top corner script -->
-          <div class="absolute top-5 left-5 font-script text-3xl text-white" style="text-shadow: 0 2px 12px rgba(0,0,0,.35);">Hi, ich bin Senta.</div>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
 <!-- ======================== SERVICE CARDS ======================== -->
-<section class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 py-6">
+<section class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 pt-4 pb-6">
+  <div class="mb-5 flex items-center text-xs uppercase tracking-[0.18em] text-brand-teal">
+    <span class="leaf-mark"></span> Deine Situation
+  </div>
   <div class="grid grid-cols-12 gap-5 lg:gap-6" data-stagger>
-    <!-- Card 1 -->
-    <a href="neu-diagnostiziert.html" class="reveal col-span-12 md:col-span-6 card card-floating group relative overflow-hidden" style="--i:0; padding:2rem 2rem 1.75rem; background: linear-gradient(145deg,#4F8A7A 0%, #3E6E61 65%, #2F5448 100%); color:#fff; border-color: rgba(255,255,255,0.06);">
-      <svg class="absolute -right-6 -bottom-6 opacity-[0.09]" width="220" height="220" viewBox="0 0 100 100" fill="none" stroke="white" stroke-width="1">
-        <circle cx="50" cy="50" r="40"/>
-        <circle cx="50" cy="50" r="28"/>
-        <circle cx="50" cy="50" r="16"/>
+    <!-- Card 1: dark — newly diagnosed -->
+    <a href="beschwerden-diagnose.html" class="reveal col-span-12 md:col-span-4 card card-floating group relative overflow-hidden" style="--i:0; padding:2rem 2rem 1.75rem; background: linear-gradient(145deg,#4F8A7A 0%, #3E6E61 65%, #2F5448 100%); color:#fff; border-color: rgba(255,255,255,0.06);">
+      <svg class="absolute -right-6 -bottom-6 opacity-[0.08]" width="200" height="200" viewBox="0 0 100 100" fill="none" stroke="white" stroke-width="0.8">
+        <circle cx="50" cy="50" r="42"/><circle cx="50" cy="50" r="30"/><circle cx="50" cy="50" r="18"/>
       </svg>
       <div class="relative">
         <div class="flex items-center gap-2 text-[0.78rem] uppercase tracking-[0.15em] text-white/70">
-          <span class="dot" style="background:#A8D6C6"></span> Für neu Diagnostizierte
+          <span class="dot" style="background:#A8D6C6"></span> Neu diagnostiziert
         </div>
-        <h3 class="mt-5 font-display text-[1.65rem] leading-[1.15] text-white max-w-[16ch]" style="font-weight:500;">
-          Die ersten 14 Tage nach der&nbsp;Diagnose — Schritt für Schritt.
+        <h3 class="mt-5 font-display text-[1.5rem] leading-[1.15] text-white max-w-[16ch]" style="font-weight:500;">
+          Die ersten Wochen nach der Diagnose — Schritt für Schritt.
         </h3>
-        <p class="mt-4 text-[0.95rem] text-white/80 max-w-[44ch]">
-          Was jetzt zählt, was warten kann, und wie du deine Küche sicher machst, ohne alles wegzuwerfen.
+        <p class="mt-4 text-[0.9rem] text-white/80">
+          Was jetzt zählt, was warten kann, und wie du deine Küche sicher machst — ohne alles wegzuwerfen.
         </p>
-        <div class="mt-7 inline-flex items-center gap-2 text-[0.9rem] text-white/90 group-hover:gap-3 transition-all duration-500" style="transition-timing-function: cubic-bezier(0.22,1,0.36,1);">
-          Starten <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        <div class="mt-7 inline-flex items-center gap-2 text-[0.88rem] text-white/90 group-hover:gap-3 transition-all duration-500" style="transition-timing-function: cubic-bezier(0.22,1,0.36,1);">
+          Beschwerden &amp; Diagnose <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </div>
       </div>
     </a>
 
-    <!-- Card 2 -->
-    <a href="kinder.html" class="reveal col-span-12 md:col-span-6 card card-floating group relative overflow-hidden" style="--i:1; padding:2rem 2rem 1.75rem; background: linear-gradient(145deg,#4F8A7A 0%, #3E6E61 65%, #2F5448 100%); color:#fff; border-color: rgba(255,255,255,0.06);">
-      <svg class="absolute -right-4 -top-4 opacity-[0.09]" width="200" height="200" viewBox="0 0 100 100" fill="none" stroke="white" stroke-width="1">
+    <!-- Card 2: light — parents of children -->
+    <a href="kinder.html" class="reveal col-span-12 md:col-span-4 card card-floating group relative overflow-hidden" style="--i:1; padding:2rem 2rem 1.75rem; background: linear-gradient(145deg,#FFFFFF 0%, #F0F8F4 60%, #E2F2EA 100%); border-color: rgba(79,138,122,0.1);">
+      <svg class="absolute -right-4 -top-4 opacity-[0.07]" width="200" height="200" viewBox="0 0 100 100" fill="none" stroke="#3E6E61" stroke-width="0.9">
         <path d="M50 15 C 70 35, 70 65, 50 85 C 30 65, 30 35, 50 15 Z"/>
-        <path d="M50 15 L 50 85"/><path d="M50 30 Q 62 40, 62 55"/><path d="M50 30 Q 38 40, 38 55"/>
+        <path d="M50 15 L 50 85"/><path d="M50 35 Q 63 45, 63 58"/><path d="M50 35 Q 37 45, 37 58"/>
       </svg>
       <div class="relative">
-        <div class="flex items-center gap-2 text-[0.78rem] uppercase tracking-[0.15em] text-white/70">
-          <span class="dot" style="background:#F0CBB0"></span> Für Eltern betroffener Kinder
+        <div class="flex items-center gap-2 text-[0.78rem] uppercase tracking-[0.15em] text-brand-teal">
+          <span class="dot"></span> Kinder &amp; Familie
         </div>
-        <h3 class="mt-5 font-display text-[1.65rem] leading-[1.15] text-white max-w-[18ch]" style="font-weight:500;">
-          Kindergeburtstag, Kita, Schule — ohne Angst, ohne Ausschluss.
+        <h3 class="mt-5 font-display text-[1.5rem] leading-[1.15] text-brand-charcoal max-w-[18ch]" style="font-weight:500;">
+          Kindergeburtstag, Kita, Schule — sicher und ohne Ausschluss.
         </h3>
-        <p class="mt-4 text-[0.95rem] text-white/80 max-w-[44ch]">
+        <p class="mt-4 text-[0.9rem] text-brand-muted">
           Kindgerechte Aufklärung, Kommunikation mit Einrichtungen und ein Alltag, der dein Kind trägt.
         </p>
-        <div class="mt-7 inline-flex items-center gap-2 text-[0.9rem] text-white/90 group-hover:gap-3 transition-all duration-500" style="transition-timing-function: cubic-bezier(0.22,1,0.36,1);">
-          Mehr erfahren <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        <div class="mt-7 inline-flex items-center gap-2 text-[0.88rem] text-brand-teal group-hover:gap-3 transition-all duration-500" style="transition-timing-function: cubic-bezier(0.22,1,0.36,1);">
+          Kinder &amp; Zöliakie <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </div>
+      </div>
+    </a>
+
+    <!-- Card 3: warm — eating out & travel -->
+    <a href="auswaerts.html" class="reveal col-span-12 md:col-span-4 card card-floating group relative overflow-hidden" style="--i:2; padding:2rem 2rem 1.75rem; background: linear-gradient(145deg,#FDF6ED 0%, #F7EDD9 60%, #F0E2C4 100%); border-color: rgba(180,130,70,0.1);">
+      <svg class="absolute -left-4 -bottom-6 opacity-[0.07]" width="200" height="200" viewBox="0 0 100 100" fill="none" stroke="#A0712A" stroke-width="0.9">
+        <circle cx="50" cy="50" r="42"/><circle cx="50" cy="50" r="28"/><line x1="50" y1="8" x2="50" y2="92"/><line x1="8" y1="50" x2="92" y2="50"/>
+      </svg>
+      <div class="relative">
+        <div class="flex items-center gap-2 text-[0.78rem] uppercase tracking-[0.15em]" style="color:#A0712A;">
+          <span class="dot" style="background:#D4A45A"></span> Unterwegs &amp; Reisen
+        </div>
+        <h3 class="mt-5 font-display text-[1.5rem] leading-[1.15] text-brand-charcoal max-w-[18ch]" style="font-weight:500;">
+          Restaurant, Urlaub, Spontanbesuch — ohne Stress.
+        </h3>
+        <p class="mt-4 text-[0.9rem] text-brand-muted">
+          Wie du auswärts sicher isst, Reisen planst und in jeder Situation die richtigen Fragen stellst.
+        </p>
+        <div class="mt-7 inline-flex items-center gap-2 text-[0.88rem] group-hover:gap-3 transition-all duration-500" style="color:#A0712A;transition-timing-function: cubic-bezier(0.22,1,0.36,1);">
+          Auswärts essen <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </div>
       </div>
     </a>
@@ -467,21 +500,21 @@
           Glutenfrei ist<br>kein Lifestyle —<br><span class="italic font-normal">sondern&nbsp;Medizin.</span>
         </h2>
         <p class="reveal mt-5 text-brand-muted max-w-[50ch]" style="--i:2;">
-          Bei Zöliakie reagieren schon Spuren Gluten. Schon Krümel am gemeinsamen Toaster reichen, um die Darmschleimhaut erneut zu schädigen — oft ohne spürbare Symptome. Deshalb arbeite ich mit dir an einem System, das dich auch bei Unsicherheit trägt.
+          Bei Zöliakie reagieren schon Spuren Gluten. Schon Krümel am gemeinsamen Toaster reichen, um die Darmschleimhaut erneut zu schädigen — oft ohne spürbare Symptome. Glutenfrei Leben hilft dir, ein System aufzubauen, das dich auch bei Unsicherheit trägt.
         </p>
       </div>
-      <div class="reveal mt-8 grid grid-cols-3 gap-3" style="--i:3;">
-        <div class="card" style="padding:1.2rem 1.1rem;">
-          <div class="font-display text-3xl tnum text-brand-charcoal">15+</div>
-          <div class="text-[0.75rem] text-brand-muted mt-1 leading-snug">Jahre Erfahrung mit Zöliakie</div>
+      <div class=”reveal mt-8 grid grid-cols-3 gap-3” style=”--i:3;”>
+        <div class=”card” style=”padding:1.2rem 1.1rem;”>
+          <div class=”font-display text-3xl tnum text-brand-charcoal”>6+</div>
+          <div class=”text-[0.75rem] text-brand-muted mt-1 leading-snug”>Jahre bis zur Diagnose im Schnitt</div>
         </div>
-        <div class="card" style="padding:1.2rem 1.1rem;">
-          <div class="font-display text-3xl tnum text-brand-charcoal">200+</div>
-          <div class="text-[0.75rem] text-brand-muted mt-1 leading-snug">Begleitete Menschen</div>
+        <div class=”card” style=”padding:1.2rem 1.1rem;”>
+          <div class=”font-display text-3xl tnum text-brand-charcoal”>10+</div>
+          <div class=”text-[0.75rem] text-brand-muted mt-1 leading-snug”>Themen im Ratgeber</div>
         </div>
-        <div class="card" style="padding:1.2rem 1.1rem;">
-          <div class="font-display text-3xl tnum text-brand-charcoal">15</div>
-          <div class="text-[0.75rem] text-brand-muted mt-1 leading-snug">„verbotene“ Begriffe im Blick</div>
+        <div class=”card” style=”padding:1.2rem 1.1rem;”>
+          <div class=”font-display text-3xl tnum text-brand-charcoal”>0 mg</div>
+          <div class=”text-[0.75rem] text-brand-muted mt-1 leading-snug”>Gluten ist das Ziel — täglich</div>
         </div>
       </div>
     </div>
@@ -531,18 +564,21 @@
 <section class="relative z-10 py-20 sm:py-28">
   <div class="max-w-4xl mx-auto px-5 sm:px-8 text-center" data-stagger>
     <div class="reveal flex items-center justify-center text-xs uppercase tracking-[0.2em] text-brand-teal" style="--i:0;">
-      <span class="leaf-mark"></span> Mein Versprechen <span class="leaf-mark" style="margin-left:.7rem; margin-right:0;"></span>
+      <span class="leaf-mark"></span> Unser Versprechen <span class="leaf-mark" style="margin-left:.7rem; margin-right:0;"></span>
     </div>
     <p class="reveal font-display text-[2rem] sm:text-[2.8rem] lg:text-[3.2rem] leading-[1.12] mt-8 text-brand-charcoal" style="--i:1;">
       „Ein glutenfreies Leben soll sich nicht wie <span class="italic">Verzicht</span> anfühlen, sondern wie eine <span class="italic" style="color:#4F8A7A;">klare, ruhige Entscheidung</span> für deinen Körper.“
     </p>
     <div class="reveal mt-10 inline-flex items-center gap-3" style="--i:2;">
-      <div class="w-12 h-12 rounded-full overflow-hidden border border-brand-line">
-        <img src="brand_assets/Senta.JPG" alt="" width="48" height="48" class="w-full h-full object-cover" loading="lazy" decoding="async">
+      <div class="w-12 h-12 rounded-full flex items-center justify-center border border-brand-line" style="background:#EDF6F0;">
+        <svg width="22" height="22" viewBox="0 0 100 100" fill="none" stroke="#3E6E61" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 80 C 30 40, 60 20, 85 15 C 80 40, 60 70, 20 80 Z"/>
+          <path d="M20 80 L 85 15"/>
+        </svg>
       </div>
       <div class="text-left">
-        <div class="font-display text-[1rem] text-brand-charcoal leading-tight">Senta Jacob</div>
-        <div class="text-xs text-brand-muted">Glutenfrei-Begleiterin · seit 2011</div>
+        <div class="font-display text-[1rem] text-brand-charcoal leading-tight">Glutenfrei Leben</div>
+        <div class="text-xs text-brand-muted">Dein Zöliakie-Ratgeber</div>
       </div>
     </div>
   </div>
@@ -625,7 +661,7 @@
     <div class="reveal flex items-center justify-center text-xs uppercase tracking-[0.2em] text-brand-teal" style="--i:0;">
       <span class="leaf-mark"></span> Häufige Fragen
     </div>
-    <h2 class="reveal mt-5 text-[2.1rem] sm:text-[2.7rem] leading-[1.1]" style="--i:1;">Was Menschen mich am häufigsten fragen.</h2>
+    <h2 class="reveal mt-5 text-[2.1rem] sm:text-[2.7rem] leading-[1.1]" style="--i:1;">Was Menschen am häufigsten fragen.</h2>
   </div>
 
   <div class="card mt-12 px-6 sm:px-10 py-2" id="faqList">
@@ -641,7 +677,7 @@
         <span class="q">Wie erkenne ich versteckte Glutenquellen im Alltag?</span>
         <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
       </button>
-      <div class="faq-panel"><div><p>Soßen, Sojasauce, Bouillon, Wurst, Medikamentenhüllen, Malz, manche Hafersorten, Bier. Ich zeige dir, welche 15 Begriffe auf Zutatenlisten dich sofort aufhorchen lassen sollten — und wie du Zweifelsfälle klärst, bevor du kaufst.</p></div></div>
+      <div class="faq-panel"><div><p>Soßen, Sojasauce, Bouillon, Wurst, Medikamentenhüllen, Malz, manche Hafersorten, Bier. Im Ratgeber findest du 15 Begriffe auf Zutatenlisten, die sofort aufhorchen lassen sollten — und wie du Zweifelsfälle klärst, bevor du kaufst.</p></div></div>
     </div>
     <div class="faq-item">
       <button class="faq-trigger" aria-expanded="false">
@@ -662,9 +698,10 @@
         <span class="q">Ersetzt die Seite eine ärztliche Beratung?</span>
         <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
       </button>
-      <div class="faq-panel"><div><p>Nein — und das soll sie auch nicht. Für Diagnose, Medikation und Verlauf bleibt deine Ärztin die erste Adresse. Ich ergänze den Alltag: die 1000 kleinen Fragen, die nach dem Arzttermin auftauchen.</p></div></div>
+      <div class="faq-panel"><div><p>Nein — und das soll sie auch nicht. Für Diagnose, Medikation und Verlauf bleibt deine Ärztin die erste Adresse. Glutenfrei Leben ergänzt den Alltag: die 1000 kleinen Fragen, die nach dem Arzttermin auftauchen.</p></div></div>
     </div>
   </div>
+  <p class="text-xs text-center mt-6" style="color:#7A9E94;">Medizinische Grundlagen nach <a href="https://www.dzg-online.de" target="_blank" rel="noopener" style="color:#4F8A7A;text-decoration:underline;text-underline-offset:3px;">DZG-Leitlinien</a>. Diese Inhalte ersetzen keine ärztliche Beratung.</p>
 </section>
 
 <!-- ======================== FREEBIE / DARK CTA ======================== -->
@@ -682,7 +719,7 @@
           10 häufige Glutenfallen — die <span class="italic">fast alle</span> übersehen.
         </h2>
         <p class="reveal mt-5 text-white/70 max-w-[52ch]" style="--i:2;">
-          Die Checkliste, die ich meinen Klient:innen in der ersten Woche schicke. Sofort als PDF. Kein Newsletter, keine weiteren Mails.
+          Die Checkliste für die erste Woche nach der Diagnose. Sofort als PDF. Kein Newsletter, keine weiteren Mails.
         </p>
         <form class="reveal mt-8 flex flex-col sm:flex-row gap-3 max-w-md" style="--i:3;" onsubmit="event.preventDefault(); this.querySelector('button').innerText='Danke — Check deine Mails'; this.querySelector('button').disabled=true;">
           <label class="sr-only" for="email">E-Mail</label>
@@ -697,9 +734,54 @@
           Mit Absenden stimmst du der Datenverarbeitung zu. Jederzeit widerrufbar.
         </p>
       </div>
-      <div class="col-span-12 lg:col-span-5 relative min-h-[320px] lg:min-h-[480px]">
-        <img src="brand_assets/Senta.JPG" alt="Senta Jacob" width="800" height="600" class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async">
-        <div class="absolute inset-0" style="background: linear-gradient(90deg, rgba(28,42,37,0.85) 0%, rgba(28,42,37,0.1) 40%, rgba(28,42,37,0) 100%);"></div>
+      <!-- PDF preview illustration -->
+      <div class="col-span-12 lg:col-span-5 relative min-h-[320px] lg:min-h-[480px] flex items-center justify-center px-8 py-10">
+        <div class="absolute inset-0" style="background:linear-gradient(90deg,rgba(28,42,37,0.6) 0%,rgba(28,42,37,0) 50%)"></div>
+        <div class="relative w-full max-w-[280px] mx-auto">
+          <!-- Shadow behind card -->
+          <div class="absolute -bottom-3 -right-3 w-full h-full rounded-2xl" style="background:rgba(255,255,255,0.06);border-radius:1.25rem;"></div>
+          <!-- PDF card -->
+          <div class="relative rounded-2xl overflow-hidden" style="background:rgba(255,255,255,0.96);box-shadow:0 30px 60px -20px rgba(0,0,0,0.5);">
+            <!-- Card header -->
+            <div class="px-5 pt-5 pb-4" style="background:linear-gradient(135deg,#4F8A7A,#3E6E61);">
+              <div class="flex items-center gap-2 text-white/80 text-[0.65rem] uppercase tracking-[0.15em]">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+                Glutenfrei Leben · Checkliste
+              </div>
+              <div class="mt-2 font-display text-white text-[1.15rem] leading-snug">10 Glutenfallen — die du kennen musst</div>
+            </div>
+            <!-- Checklist items -->
+            <div class="px-5 py-4 space-y-2.5">
+              <div class="flex items-center gap-2.5">
+                <div class="w-4 h-4 rounded flex items-center justify-center flex-shrink-0" style="background:#EDF6F0;border:1.5px solid #4F8A7A;">
+                  <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#4F8A7A" stroke-width="3" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <span class="text-[0.8rem] text-brand-charcoal">Sojasauce &amp; Soßen</span>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <div class="w-4 h-4 rounded flex items-center justify-center flex-shrink-0" style="background:#EDF6F0;border:1.5px solid #4F8A7A;">
+                  <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#4F8A7A" stroke-width="3" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <span class="text-[0.8rem] text-brand-charcoal">Hafer &amp; Malzprodukte</span>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <div class="w-4 h-4 rounded flex items-center justify-center flex-shrink-0" style="background:#EDF6F0;border:1.5px solid #4F8A7A;">
+                  <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#4F8A7A" stroke-width="3" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <span class="text-[0.8rem] text-brand-charcoal">Medikamentenhüllen</span>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <div class="w-4 h-4 rounded flex-shrink-0" style="border:1.5px solid #D0DDD7;border-radius:4px;"></div>
+                <span class="text-[0.8rem] text-brand-muted">Gewürzmischungen</span>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <div class="w-4 h-4 rounded flex-shrink-0" style="border:1.5px solid #D0DDD7;border-radius:4px;"></div>
+                <span class="text-[0.8rem] text-brand-muted">+ 6 weitere Fallen</span>
+              </div>
+            </div>
+            <div class="px-5 pb-4 text-[0.7rem] text-brand-muted" style="border-top:1px solid #F0F0F0;padding-top:0.75rem;">Kostenlos · PDF · Sofort</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -716,7 +798,7 @@
           <img src="brand_assets/logobetter.png" alt="Glutenfrei Logo" width="40" height="40" class="block rounded-full" style="object-fit:contain;">
         </span>
         <span class="flex flex-col gap-[3px] leading-none">
-          <span class="font-display text-[1.05rem] leading-none tracking-tight text-white">senta<span class="text-brand-mint">.</span>jacob</span>
+          <span class="font-display text-[1.05rem] leading-none tracking-tight text-white">glutenfrei<span class="text-brand-mint">.</span>leben</span>
           <span class="font-body text-[0.55rem] tracking-[0.13em] uppercase text-white/75">glutenfrei leben</span>
         </span>
       </div>
@@ -759,7 +841,7 @@
   </div>
   <div class="border-t border-white/15">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-5 flex flex-col sm:flex-row justify-between gap-3 text-xs text-white/75">
-      <div>© <span id="year"></span> Senta Jacob · Alle Rechte vorbehalten</div>
+      <div>© <span id="year"></span> Glutenfrei Leben · Alle Rechte vorbehalten</div>
       <div class="flex gap-5">
         <a href="impressum.html" class="hover:text-white/80">Impressum</a>
         <a href="datenschutz.html" class="hover:text-white/80">Datenschutz</a>
